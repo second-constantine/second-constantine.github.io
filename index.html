@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru|en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>next-way.by</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id='ng-app' ng-app="core-app" ng-controller="CoreController">
+
+<!-- Header -->
+<header>
+    <!-- Nav -->
+    <div id="nav">
+        <!-- Main Nav -->
+        <div id="nav-fixed">
+            <div class="container">
+                <!-- logo -->
+                <div class="nav-logo">
+                    <a href="/" class="logo"><img src="./img/logo.png" alt=""></a>
+                </div>
+                <!-- /logo -->
+
+                <!-- nav -->
+                <ul class="nav-menu nav navbar-nav">
+                    <li ng-repeat="category in categories" class="{{ category.style }}">
+                        <a href="#?category={{ category.name }}">
+                            {{ category.value }}
+                        </a>
+                    </li>
+                </ul>
+                <!-- /nav -->
+
+                <!-- search & aside toggle -->
+                <div class="nav-btns">
+                    <button class="aside-btn"><i class="fa fa-bars"></i></button>
+                    <button class="search-btn"><i class="fa fa-search"></i></button>
+                    <div class="search-form">
+                        <input class="search-input" type="text" name="search" ng-model="search"
+                               ng-change="changeSearch(search)" placeholder="Начни свой поиск ...">
+                        <button class="search-close"
+                                ng-click="changeSearch('')">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /search & aside toggle -->
+            </div>
+        </div>
+        <!-- /Main Nav -->
+
+        <!-- Aside Nav -->
+        <div id="nav-aside">
+            <!-- /nav -->
+            <!-- widget posts -->
+            <div class="section-row">
+                <h3>Закреп</h3>
+                <div class="post post-widget" ng-repeat="post in pinned">
+                    <a class="post-img" href="{{ post.link }}">
+                        <img ng-src="{{ post.imageLink }}" alt=""></a>
+                    <div class="post-body">
+                        <h3 class="post-title">
+                            <a href="{{ post.link }}">
+                                {{ post.description }}
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- /widget posts -->
+
+            <!-- aside nav close -->
+            <button class="nav-aside-close"><i class="fa fa-times"></i></button>
+            <!-- /aside nav close -->
+        </div>
+        <!-- Aside Nav -->
+    </div>
+    <!-- /Nav -->
+</header>
+<!-- /Header -->
+
+<!-- section -->
+<div class="section" ng-show="isPostMode">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row" ng-bind-html="renderHtml(targetPost.html)">
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
+<!-- section -->
+<div class="section" ng-show="!isPostMode">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- post -->
+            <div class="col-md-6" ng-repeat="post in newPosts|filter:search">
+                <div class="post post-thumb">
+                    <a class="post-img" href="{{ post.link }}">
+                        <img ng-src="{{ post.imageLink }}" alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta">
+                            <a class="post-category {{ post.category.style }}"
+                               href="#?category={{ post.category.name }}">
+                                {{ post.category.value }}
+                            </a>
+                            <span class="post-date"> {{ post.date }}</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="{{ post.link }}">
+                                {{ post.description }}
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- /post -->
+        </div>
+        <!-- /row -->
+
+        <!-- row -->
+        <div class="row" ng-show="recentPosts.length > 0">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>В Прошлом</h2>
+                </div>
+            </div>
+
+            <!-- post -->
+            <div class="col-md-4" ng-repeat="post in recentPosts">
+                <div class="post">
+                    <a class="post-img" href="{{ post.link }}">
+                        <img ng-src="{{ post.imageLink }}" alt="">
+                    </a>
+                    <div class="post-body">
+                        <div class="post-meta">
+                            <a class="post-category {{ post.category.style }}"
+                               href="#?category={{ post.category.name }}">
+                                {{ post.category.value }}
+                            </a>
+                            <span class="post-date">
+                                {{ post.date }}
+                            </span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="{{ post.link }}">
+                                {{ post.description }}
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- /post -->
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
+<!-- jQuery Plugins -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(56828467, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/56828467" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

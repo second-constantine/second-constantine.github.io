@@ -1,0 +1,32 @@
+[
+    {
+        "value": "Hacking",
+        "style": "cat-2",
+        "name": "HACKING"
+    },
+    {
+        "value": "Programming",
+        "style": "cat-3",
+        "name": "PROGRAMMING"
+    },
+    {
+        "value": "Machine Learning",
+        "style": "cat-4",
+        "name": "ML"
+    },
+    {
+        "value": "Github",
+        "style": "cat-1",
+        "name": "GITHUB"
+    },
+    {
+        "value": "Services",
+        "style": "cat-3",
+        "name": "SERVICES"
+    },
+    {
+        "value": "Another",
+        "style": "",
+        "name": "ANOTHER"
+    }
+]
