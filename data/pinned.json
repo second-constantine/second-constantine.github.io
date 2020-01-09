@@ -15,8 +15,13 @@
         "link": "https://web.telegram.org/#/im?p=@next_conbot"
     },
     {
-        "imageLink": "img/grammar_bot.jpg",
+        "imageLink": "img/grammar_conbot.jpg",
         "description": "Бот для проверки орфографии в телеграмме",
         "link": "https://web.telegram.org/#/im?p=@grammar_conbot"
+    },
+    {
+        "imageLink": "img/translator_conbot.jpg",
+        "description": "Бот-переводчик",
+        "link": "https://web.telegram.org/#/im?p=@translator_conbot"
     }
 ]

