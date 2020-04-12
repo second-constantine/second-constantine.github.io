@@ -29,7 +29,6 @@ app.controller("CoreController",
             $scope.newPosts = $scope.allPosts.slice(0, 2);
             $scope.posts = $scope.allPosts.slice(2);
             document.title = "Constantine's blog";
-            document.location = document.location;
             document.location.hash = "";
             console.log("homeRedirect")
         }
@@ -88,7 +87,7 @@ app.controller("CoreController",
                     $scope.clickPost(postId);
                 } else {
                     if (params.s === undefined) {
-                        $scope.homeRedirect();
+                       $scope.homeRedirect();
                     }
                 }
             }
