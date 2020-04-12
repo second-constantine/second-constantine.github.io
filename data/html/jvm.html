@@ -1,0 +1,23 @@
+Dump java process
+<pre>jmap -dump:format=b,file=cheap.bin pid_value 
+</pre>
+View java process stack
+<pre>ps aux | grep "java"
+jstack -l [java_pid] > output.txt
+</pre>
+View bytecode
+<pre>javap -verbose My.class
+</pre>
+Install custom libs in maven
+<pre>mvn install:install-file -Dfile=[path-to-file] -DgroupId=[group-id] -DartifactId=[artifact-id] -Dversion=[version] -Dpackaging=jar
+mvn install:install-file -Dfile=[path-to-file] -DpomFile=[path-to-pomfile]
+mvn install:install-file -Dfile=[path-to-file]
+</pre>
+<pre>mvn install:install-file -Dfile=/path_to_jar/sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar
+</pre>
+Run spring boot app with overrided properties
+<pre>java -jar conbot.jar --spring.config.location=telegram-bot.properties,idf.properties
+</pre>
+Run gradle tasks with a override property
+<pre>./gradlew clean build -P env=dev
+</pre>

@@ -1,0 +1,286 @@
+Add new user
+<pre>sudo adduser newuser
+</pre>
+Edit priviliges for users
+<pre>sudo /usr/sbin/visudo
+</pre>
+Or allow the newuser to run sudo by adding the user to sudo group
+<pre>sudo adduser newuser sudo
+</pre>
+Remove the newuser
+<pre>sudo deluser newuser
+sudo rm -r /home/newuser
+</pre>
+Change owner for directory\file
+<pre>sudo chown -R $USER ~/.blabla
+</pre>
+
+<hr>
+
+Write image to disk by dd
+<pre>dd if=kali.iso of=/dev/sdb bs=512k
+</pre>
+<pre>sudo dd if=/path/to/iso/windows.iso of=/dev/sdg bs=4M; sync
+</pre>
+Recover ntfs disk
+<pre>sudo ntfsfix  /dev/sdb1
+</pre>
+Info about disks
+<pre>sudo fstab -l
+</pre>
+Edit automount and add mount for ext4 disk
+<pre>sudo nano /etc/fstab
+</pre>
+<pre>/dev/sda1 /home/qwer/DATA   ext4  defaults       0  0
+</pre>
+Mount ntfs disk
+<pre>mount -t ntfs /dev/sdb1 /mnt/ntfs
+</pre>
+Unmount ntfs disk
+<pre>sudo umount /mnt/ntfs
+</pre>
+Report file system disk space usage
+<pre>df -BM
+</pre>
+Check filesize
+<pre>du -h *
+</pre>
+
+<hr>
+
+Create soft link for file
+<pre>ln -s /webroot/home/httpd/test.com/index.php /home/vivek/index.php
+</pre>
+
+<hr>
+
+Monitoring input stream in file
+<pre>tail -f file.log
+</pre>
+Execute every 5 sec by watch
+<pre>watch -n 5 ls -agl
+</pre>
+Show running processes
+<pre>ps aux | grep [command_name]</pre>
+
+<hr>
+
+Cron, for instance
+<pre>crontab -e 
+</pre>
+<pre>*/10 * * * * /usr/bin/python ~/script_path/script.py
+</pre>
+<pre>* * * * * sudo -u qwer echo CRON IS WORK! at $(date) >> /home/qwer/cron.log 2>&1
+</pre>
+
+<hr>
+
+Recurce print files by find + cat
+<pre>find [dir] -type f -exec cat \{} \;
+</pre>
+Simple find by name
+<pre>find -name *file_name*
+</pre>
+For instance chmod+find
+<pre>find /opt/lampp/htdocs -type d -exec chmod 755 {} \;
+</pre>
+
+Информации о свободном месте на дисках
+<pre>df -h</pre>
+Заполнение нулями свободную память на диске (в режиме восстановления)
+<pre>zerofree -v /dev/sdaX</pre>
+Хидер для запуск питоновского скрипта
+<pre>#!/usr/bin/env python
+</pre>
+Хидер для запуск баш скрипта
+<pre>#!/bin/bash
+</pre>
+
+
+Reconfig apt
+<pre>sudo dpkg --configure -a
+</pre>
+Install skype from snap
+<pre>snap refresh skype --channel=insider/stable
+</pre>
+Install samba (smb)
+<pre>sudo apt install system-config-samba
+</pre>
+Run samba config
+<pre>sudo system-config-samba
+</pre>
+Fix samba (if need)
+<pre>sudo touch /etc/libuser.conf
+</pre>
+Connect smb server
+<pre>nautilus smb://winda-pc/
+</pre>
+
+<hr>
+
+Autologin in terminal
+<pre>mkdir /etc/systemd/system/getty@tty1.service.d    
+nano /etc/systemd/system/getty@tty1.service.d/override.conf
+</pre>
+<pre>[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noissue --autologin myusername %I $TERM
+Type=idle
+</pre>
+
+<hr>
+
+Turn off guest session
+<pre>sudo gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+add "allow-guest=false"
+</pre>
+
+<hr>
+
+Turn on rc.local (autostart script)
+<pre>sudo nano /etc/rc.local
+</pre>
+<pre>#!/bin/sh -e
+
+/path/your/script.sh
+
+exit 0
+</pre>
+<pre> chmod +x /etc/rc.local
+</pre>
+Create service
+<pre>sudo nano /etc/systemd/system/rc-local.service
+</pre>
+<pre>[Unit]
+Description=/etc/rc.local Compatibility
+ConditionPathExists=/etc/rc.local
+       
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+       
+[Install]
+WantedBy=multi-user.target
+</pre>
+Enable
+<pre>sudo systemctl enable rc-local
+</pre>
+
+<hr>
+
+List autostart
+<pre>cd /etc/xdg/autostart
+sudo sed --in-place 's/NoDisplay=true/NoDisplay=false/g' *.desktop
+</pre>
+Remove service from autostart (for not all)
+<pre>sudo update-rc.d &lt;appname&gt; disable 
+</pre>
+
+<hr>
+
+Install and config sdkman
+<pre>curl -s "https://get.sdkman.io" | bash
+</pre>
+<pre>source "$HOME/.sdkman/bin/sdkman-init.sh"
+</pre>
+
+<hr>
+
+Install manually by update-alternatives
+<pre>sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+</pre>
+
+<hr>
+
+Install insomnia (aka postman)
+<pre>
+# Add to sources
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /"| sudo tee -a /etc/apt/sources.list.d/insomnia.list
+
+# Add public key used to verify code signature
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+
+# Refresh repository sources and install Insomnia
+sudo apt-get update
+sudo apt-get install insomnia
+</pre>
+
+<hr>
+To change username (it is probably best to do this without being logged in)
+<pre>sudo usermod -l newUsername oldUsername
+</pre>
+To change home-folder, use 
+<pre>sudo usermod -d /home/newHomeDir -m newUsername
+</pre>
+
+<hr>
+
+Install gnome-shell (графическая оболочка)
+<pre>sudo apt-get install gnome-shell gnome-session gnome-tweak-tool gdm
+</pre>
+<pre>gnome-shell --version
+</pre>
+Hotkey extension (win+1..10)
+<a href="https://extensions.gnome.org/extension/413/dash-hotkeys/">
+    https://extensions.gnome.org/extension/413/dash-hotkeys/
+</a>
+Install display manager lightdm (aka gdm3)
+<pre>apt-get purge lightdm
+apt-get install lightdm
+</pre>
+
+<hr>
+
+Install and config winep
+<pre>
+Run winetricks- Select the default wineprefix -Install a font. Select corefonts, fonfix and press OK. 
+Run winetricks- Select the default wineprefix -Install a Windows DLL op component. 
+</pre>
+select
+<pre>vcrun 2005
+vcrun 2008
+vcrun 2010
+vcrun 6
+vcrun 6 sp6
+d3dx9
+dotnet 20
+</pre>
+reboot and
+<pre>from folder Windows/Microsoft.NET/Framework remove v3.0 (if exist)
+vb5run, vb6run
+vcrun 2003
+dotnet 30
+</pre>
+reboot and
+<pre>d3xof
+devenum
+dinрut8
+direckmusik
+direcktplay
+directx9
+dxdiagn
+d3dx11_43
+mfs40, wsh56vb, wsh57. gdiplus
+physx
+gfw
+</pre>
+config registry.
+<pre>Run winetricks -Select the default wineprefix -Change settings !
+</pre>
+set
+<pre>1. DirectDrawRender(ddr) opengl
+2. Direct3D Multisampling enabled
+3. OffscreenRenderingMode(orm) fbo
+4. PixelShaderMode(psm) enabled
+5. Render TargetLockMode(rtlm) auto
+6. UseGLSL(glsl) enabled (default)
+7. VertexShaders(vsm) hardware
+8. VideoMemorySize 1024 (select option for your videocard)
+9. MouseWarpOverride(mwo) enabled (force)
+</pre>
+
+<hr>

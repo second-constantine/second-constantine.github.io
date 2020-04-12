@@ -1,0 +1,189 @@
+Добавляем ключ
+<pre>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+</pre>
+Добавляем репозиторий
+<pre>echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+</pre>
+Устанавливаем монгу
+<pre>sudo apt-get install -y mongodb-org
+</pre>
+Коннект к шелу
+<pre>mongo --port 27017
+</pre>
+Выбор схемы
+<pre>use my_db
+</pre>
+Пример селекта
+<pre>db.my_table.find().sort({"_id":-1}).limit(2).pretty()
+</pre>
+Пример экспорта
+<pre>mongoexport -h localhost:27017 -d my_db -c my_collection -o output.json
+</pre>
+Пример импорта
+<pre>mongoimport -h localhost:27017 -d my2_db -c my_collection --file output.json
+</pre>
+Поиск в внутреннем массиве
+<pre>db.collection.find({"fields":{$elemMatch:{field1:5,field2:"A"}}})
+</pre>
+Поиск в внутреннем массиве, если примитивный тип внутри
+<pre>db.collection.find({"fields":{$elemMatch:{"$eq":679207}}})
+</pre>
+Поиск not null значений
+<pre>db.collection.find({"IMAGE URL":{$exists:true}});
+</pre>
+Поиск регуляркой, альтернатива like
+<pre>db.collection.find({name: /regular/});
+</pre>
+Поиск 'in'
+<pre>db.collection.find({ field: { $in: ["one","two","123"]}});
+</pre>
+Сортировка desc
+<pre>db.collection.find({}).sort({"_id": -1})
+</pre>
+Поиск 'not in' with sort desc
+<pre>db.collection.find({"any_field": {$nin: ["any_value"]}}).sort({"_id": -1})
+</pre>
+Массовый апдейт
+<pre>db.collection.updateMany({
+    field5: { $in : ["fieldany", "ANY_VALUE"]},
+    $or:[{
+            "fields.field5" : null 
+        }, {
+            $and:[{
+                "fields.field1" : false
+            },{
+                "fields.field2" : null
+            }]
+        }
+    ]}, { 
+        $set: {
+            "currentStep" : "ANY_FIELD",
+            "finished" : false
+        }
+});
+</pre>
+Массовый апдейт c find, используя фишки js
+<pre>db.collection.find({
+    "fields.snils":/-/
+}).forEach(function(e,i) {
+    e.fields.snils = e.fields.snils.replace(/-/g, '');
+    db.collection.save(e);
+});
+</pre>
+Разовый апдейты
+<pre>db.collection.update({ 
+    _id: id
+}, {
+    $set: { 
+        "finished": false 
+    },
+    $currentDate: { 
+        "lastModified": true 
+    }
+})
+</pre>
+Включаем профайлинг медленных запросов
+<pre>
+db.setProfilingLevel(1, { slowms: 2000 })
+</pre>
+Через 1 минуту выключаем
+<pre>
+db.setProfilingLevel(0)
+</pre>
+Cмотрим последний профайл
+<pre>
+db.system.profile.find().limit(10).sort( { ts : -1 } ).pretty()
+</pre>
+Создание индекса
+<pre>db.collection.createIndex( { "extra.name": 1 }, { background: true } )
+</pre>
+Пример агрегации
+<pre>
+db.collection.aggregate([{
+    $match: { 
+        $and: [{ 
+            entityType: 'ANY_FIELD' 
+        }, { 
+            unloadDate: ISODate("2018-01-04 21:00:00.000Z") 
+        }
+    ]}
+}, {
+    $group: {
+        _id: {
+            "entityType": "$entityType",
+            "part": "$part",
+            "unloadDate": "$unloadDate"
+        },
+        aggregate: {
+            $push: {
+                ids: "$ids",
+                value: "$info"
+            }
+        },
+        counts: {
+            $sum: 1
+        }
+    }
+}]);
+</pre>
+Основной пример мапредюса
+<pre>db.system.js.save({ _id: "Sum" ,
+value: function(key, values) {
+    var total = 0;
+    for(var i = 0; i &lt; values.length; i++)
+        total += values[i];
+    return total;
+}});
+db.collection.mapReduce(function() {
+    if(this.value_for_expression == "some_expression") {
+        emit(this.entityType, this.value_for_aggregation - 0) // convert to int
+    }
+},
+function(key, value) {
+    return Sum(key, value)
+},
+{ out: "map_reduce_example" }
+)
+db.getCollection('map_reduce_example').find({})
+</pre>
+Суммирование
+<pre>db.system.js.save({ _id: "Sum" ,
+value: function(key, values) {
+    var total = 0;
+    for(var i = 0; i &lt; values.length; i++)
+        total += values[i];
+    return total;
+}});
+</pre>
+Среднее
+<pre>db.system.js.save({ _id: "Avg" ,
+value: function(key, values) {
+    var total = Sum(key, values);
+    var mean = total / values.length;
+    return mean;
+}});
+</pre>
+Максимальное значение
+<pre>db.system.js.save({ _id: "Max" ,
+value: function(key, values) {
+    var maxValue = values[0];
+    for(var i=1; i &lt; values.length; i++) {
+        if(values[i] &gt; maxValue) {
+            maxValue = values[i];
+        }
+    }
+    returnmaxValue;
+}});
+</pre>
+Минимальное значение
+<pre>db.system.js.save({ _id: "Min" ,
+value: function(key, values) {
+    var minValue=values[0];
+    for(var i=1;i &lt; values.length;i++) {
+        if(values[i] &lt; minValue) {
+            minValue = values[i];
+        }
+    }
+    return minValue;
+}});
+</pre>

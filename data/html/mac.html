@@ -1,0 +1,55 @@
+View disks
+<pre>diskutil list
+</pre>
+Install fuse for write to ntfs
+<pre>brew install ntfs-3g
+sudo mkdir /Volumes/NTFS
+sudo /usr/local/bin/ntfs-3g /dev/disk1s1 /Volumes/NTFS -olocal -oallow_other
+</pre>
+A 15-minute shutdown timer
+<pre>sudo shutdown -h +15
+</pre>
+A 30-minute restart timer
+<pre>sudo shutdown -r +30
+</pre>
+A 1-hour sleep timer
+<pre>sudo shutdown -s +60
+</pre>
+
+<hr>
+
+Vnc server on mac
+<br>Step 1: Set priveleges
+<pre>sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
+</pre>
+Step 2: Allow VNC clients
+<pre>sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setvnclegacy -vnclegacy yes
+</pre>
+Step 3: Set VNC password (change it at the end of the line (i.e. don't use supersecret))
+<pre>sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setvncpw -vncpw supersecret
+</pre>
+Step 4: Restart service
+<pre>sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
+</pre>
+Step 5: If no ARD services have been activated on the machine before, it is also necessary to run the following command
+<pre>sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
+</pre>
+
+<hr>
+
+<h3>Create usbboot mac os image</h3>
+Catalina:*
+<pre>sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+</pre>
+Mojave:*
+<pre>sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+</pre>
+High Sierra:*
+<pre>sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+</pre>
+Sierra:
+<pre>sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Sierra.app
+</pre>
+El Capitan:
+<pre>sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
+</pre>

@@ -1,0 +1,72 @@
+Mount /system for write
+<pre>mount -o rw,remount /system
+</pre>
+Mount /system for read only
+<pre>mount -o ro,remount /system
+</pre>
+File for local dns
+<pre>/system/etc/hosts
+</pre>
+A script for autorun
+<pre>/system/etc/mkshrc
+</pre>
+Block ip by iptables (only for restart)
+<pre>iptables -A INPUT -s 65.55.44.100 -j DROP
+</pre>
+Remove block
+<pre>iptables -D INPUT -s 65.55.44.100 -j DROP
+</pre>
+Flash recovery by fastboot (booloader mode)
+<pre>fastboot flash recovery recovery.img
+</pre>
+Разблокировка загрузчика (booloader mode)
+<pre>fastboot oem unlock
+</pre>
+Connect device by adb
+<pre>adb connect 192.168.0.101:5555
+</pre>
+List devices by adb
+<pre>adb devices
+</pre>
+Restart device by adb
+<pre>adb reboot
+</pre>
+Restart to recovery by adb
+<pre>adb reboot recovery
+</pre>
+Restart to bootloader by adb
+<pre>adb reboot bootloader
+</pre>
+Install apk by adb
+<pre>adb install &lt;путь_к_apk&gt;
+</pre>
+Remove package by adb
+<pre>adb uninstall &lt;package&gt;
+</pre>
+Disable ANY app by adb
+<pre>adb shell pm disable-user --user 0 com.huawei.iconnect
+</pre>
+Full remove ANY app by adb
+<pre>adb shell pm uninstall -k --user 0 com.huawei.iconnect
+</pre>
+Enable app by adb
+<pre>adb shell pm enable com.huawei.iconnect
+</pre>
+List disabled apps by adb
+<pre>adb shell pm list packages -d
+</pre>
+Upload file to divice by adb
+<pre>adb push /path/to/local/file /mnt/sdcard/path/to/file
+</pre>
+Download file from device by adb
+<pre>adb pull /mnt/sdcard/path/to/file /path/to/local/file
+</pre>
+Show log by adb
+<pre>adb logcat
+</pre>
+Android shell by adb
+<pre>adb shell
+</pre>
+Open settings on device by adb
+<pre>adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings
+</pre>

@@ -1,0 +1,59 @@
+Docker installation
+<pre>sudo apt-get remove docker docker-engine docker.io
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce
+sudo docker run hello-world
+sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+</pre>
+Run docker without root
+<pre>sudo usermod -aG docker $USER
+newgrp docker
+sudo systemctl restart docker
+sudo chmod 666 /var/run/docker.sock
+</pre>
+View all containers
+<pre>docker ps -a
+</pre>
+View all running containers
+<pre>docker ps
+</pre>
+Start a container
+<pre>docker start $container_name
+</pre>
+View information about a container
+<pre>docker inspect $conainer_name
+</pre>
+Build dockerfile
+<pre>docker build .
+</pre>
+View container log
+<pre>docker log $container_name
+</pre>
+Remove container
+<pre>docker rm $container_name
+</pre>
+Run container with forward ports (80 - container, 8080 - host)
+<pre>docker run -d -p 8080:80 $container
+</pre>
+Run a docker container's bash
+<pre>docker exec -it $container_name bash
+</pre>
+Run util in docker container
+<pre>docker exec infra_mongodb_1 mongoexport -d devbot -c botLog -o /root/test.json
+</pre>
+Remove all inactive containers
+<pre>docker rm -v $(docker ps -aq -f status=exited)
+</pre>
+Create custom image
+<pre>docker run -it --name myapp --hostname myapp ubuntu bash
+apt update
+apt install cowsay
+docker commit myapp MY_DOCKER_ID/MY_IMAGE
+docker push MY_DOCKER_ID/MY_IMAGE
+</pre>
+

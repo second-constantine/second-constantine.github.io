@@ -1,0 +1,1233 @@
+[
+    {
+        "id": "translator_conbot",
+        "image": "img/translator_conbot.jpg",
+        "date": "2020-01-09",
+        "links": [
+            [
+                "https://web.telegram.org/#/im?p=@translator_conbot",
+                "@translator_conbot"
+            ]
+        ],
+        "description": "Бот-переводчик в телегармм. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
+        "category": {
+            "value": "Services",
+            "style": "cat-3",
+            "name": "SERVICES"
+        }
+    },
+    {
+        "id": "mac",
+        "image": "img/macos.jpg",
+        "date": "2019-12-24",
+        "description": "MacOS. Basic utils and custom for a MacOS. Run vnc server. Install live usbboot.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "links": [
+            [
+                "https://github.com/osxfuse/osxfuse/wiki/NTFS-3G",
+                "https://github.com/osxfuse/osxfuse/wiki/NTFS-3G"
+            ]
+        ],
+        "hiddenTags": [
+            "vnc",
+            "fuse",
+            "ntfs",
+            "terminal",
+            "shell",
+            "shutdown",
+            "remote desktop",
+            "macOS",
+            "внс",
+            "фьюс",
+            "нтфс",
+            "терминал",
+            "шел",
+            "удаленный рабочий стол",
+            "мак ос",
+            "install"
+        ]
+    },
+    {
+        "id": "ctf_web",
+        "image": "img/ctf.jpg",
+        "date": "2019-12-17",
+        "description": "CTF web tricks. Some tricks for web CTFs and another hacking. RCE(Remote Code Execution), LFI(Local File Inclusion)",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "file metadata",
+            "binary",
+            "RCE(Remote Code Execution)",
+            "LFI(Local File Inclusion)",
+            "truncation",
+            "hexadecimal octet",
+            "nc",
+            "reverse",
+            "jwt",
+            "mysql",
+            "nosql",
+            "injections",
+            "Nullbyte",
+            "alert",
+            "reverse shell",
+            "SVG"
+        ]
+    },
+    {
+        "id": "payload",
+        "image": "img/payload.jpg",
+        "date": "2019-12-17",
+        "description": "Payloads Cheat Sheet. In computing and telecommunications, the payload is the part of transmitted data that is the actual intended message. Headers and metadata are sent only to enable payload delivery.",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "payloads",
+            "XSLT",
+            "CRLF",
+            "RTL Character (writes payloads backwards)",
+            "Nullbyte",
+            "alert",
+            "reverse shell",
+            "SVG"
+        ],
+        "links": [
+            [
+                "https://github.com/swisskyrepo/PayloadsAllTheThings",
+                "PayloadsAllTheThings"
+            ],
+            [
+                "https://portswigger.net/web-security/cross-site-scripting/cheat-sheet",
+                "Cross-site scripting (XSS) cheat sheet"
+            ],
+            [
+                "https://www.w3schools.com/html/html_entities.asp",
+                "HTML Entities"
+            ]
+        ]
+    },
+    {
+        "id": "jvm",
+        "image": "img/jvm.jpg",
+        "date": "2019-12-15",
+        "description": "Notes about jvm languages. Get process dumps. Install localy a maven's lib. Get bytecode by class",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "jdk",
+            "jstack",
+            "bytecode",
+            "maven",
+            "jmap",
+            "gradle"
+        ]
+    },
+    {
+        "id": "postgresql",
+        "image": "img/postgresql.png",
+        "date": "2019-12-09",
+        "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users. It is the default database for macOS Server, and is also available for Linux, FreeBSD, OpenBSD, and Windows.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "database",
+            "PSQL",
+            "create index",
+            "GiST",
+            "GIN"
+        ],
+        "eternal": [
+            [
+                "https://postgrespro.ru/docs/postgresql/9.6/sql-createindex",
+                "CREATE INDEX docs (RU)"
+            ],
+            [
+                "https://alvinalexander.com/blog/post/postgresql/log-in-postgresql-database",
+                "Postgres login: How to log into a Postgresql database"
+            ]
+        ]
+    },
+    {
+        "id": "zip",
+        "image": "img/zip.jpeg",
+        "date": "2019-12-08",
+        "description": "Work with archives in a terminal",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "zip",
+            "unrar",
+            "tar",
+            "gz",
+            "bz2",
+            "rar",
+            "7zip",
+            "tar.xz"
+        ]
+    },
+    {
+        "id": "network",
+        "image": "img/network.png",
+        "date": "2019-12-06",
+        "description": "Network scan examples. Check network activity. Check domain's by common cert. Change mac address.",
+        "links": [
+            [
+                "https://www.cyberciti.biz/security/nmap-command-examples-tutorials/",
+                "Top 32 Nmap Command Examples For Linux Sys/Network Admins"
+            ],
+            [
+                "https://askubuntu.com/questions/57339/connect-disconnect-from-vpn-from-the-command-line",
+                "Connect/disconnect from VPN from the command line"
+            ]
+        ],
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "traceroute",
+            "nmap",
+            "nc",
+            "ifconfig",
+            "mac",
+            "hosts",
+            "network-manager",
+            "nmcli",
+            "curl",
+            "wget",
+            "netstat",
+            "certs",
+            "nmcli",
+            "vulns"
+        ]
+    },
+    {
+        "id": "reverse_shell",
+        "image": "img/terminal.jpeg",
+        "date": "2019-12-06",
+        "description": "Reverse Shell Cheat Sheet. If you’re lucky enough to find a command execution vulnerability during a penetration test, pretty soon afterwards you’ll probably want an interactive shell.",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "RCE(Remote Code Execution)",
+            "LFI(Local File Inclusion)",
+            "nc",
+            "reverse shell",
+            "netcat"
+        ],
+        "links": [
+            [
+                "http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet",
+                "http://pentestmonkey.net/"
+            ],
+            [
+                "https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1",
+                "nishang (github)"
+            ]
+        ]
+    },
+    {
+        "id": "ubuntu",
+        "image": "img/ubuntu.png",
+        "date": "2019-12-01",
+        "description": "Autologin, disable guest session, scripts for autorun. Install net-tools (ifconfig), samba, skype, insomnia, sdkman, gnome shell, wine,",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "samba",
+            "skype",
+            "snap",
+            "autologin",
+            "autostart",
+            "update-alternatives",
+            "wine",
+            "run win32 apps",
+            "sdkman",
+            "gnome-shell",
+            "desktop",
+            "automount",
+            "cron",
+            "adduser",
+            "recursively find",
+            "watch",
+            "tail",
+            "chmod",
+            "chown",
+            "filesize du",
+            "disk usages",
+            "dd",
+            "ntfs",
+            "zip",
+            "fstab",
+            "df",
+            "zerofree",
+            "ext4",
+            "smb"
+        ],
+        "links": [
+            [
+                "https://www.linuxbabe.com/linux-server/how-to-enable-etcrc-local-with-systemd",
+                "How to Enable /etc/rc.local with Systemd"
+            ]
+        ]
+    },
+    {
+        "id": "mysql",
+        "image": "img/sql_joins.png",
+        "date": "2019-12-01",
+        "description": "MySQL queries examples, joins",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "index",
+            "unsafe",
+            "duplicates",
+            "queries",
+            "alter table progress",
+            "migration",
+            "copy data",
+            "drop foreign keys"
+        ]
+    },
+    {
+        "id": "metasploit",
+        "image": "img/metasploit.png",
+        "date": "2019-11-23",
+        "description": "Простой пример работы с Metasploit Framework",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "hack",
+            "payloads",
+            "XSLT",
+            "CRLF",
+            "RTL Character (writes payloads backwards)",
+            "Nullbyte",
+            "alert",
+            "reverse shell",
+            "SVG",
+            "file metadata",
+            "binary",
+            "RCE(Remote Code Execution)",
+            "LFI(Local File Inclusion)",
+            "truncation",
+            "hexadecimal octet",
+            "nc",
+            "jwt",
+            "mysql",
+            "nosql",
+            "injections",
+            "payloads",
+            "XSLT",
+            "shell",
+            "meterpreter"
+        ],
+        "links": [
+            [
+                "https://github.com/swisskyrepo/PayloadsAllTheThings",
+                "PayloadsAllTheThings"
+            ],
+            [
+                "https://portswigger.net/web-security/cross-site-scripting/cheat-sheet",
+                "Cross-site scripting (XSS) cheat sheet"
+            ],
+            [
+                "https://www.w3schools.com/html/html_entities.asp",
+                "HTML Entities"
+            ],
+            [
+                "https://www.darkoperator.com/installing-metasploit-in-ubunt",
+                "Origin install guide"
+            ],
+            [
+                "https://telegra.ph/Skrytoe-upravlenie-kompyuterom-na-Windows-ispolzuya-Metasploit-CHast-2-11-14",
+                "Скрытое управление компьютером на Windows (используя Metasploit). Часть 2"
+            ]
+        ]
+    },
+    {
+        "id": "ml_zoo",
+        "image": "img/ml_zoo.png",
+        "description": "Зоопарк архитектур",
+        "date": "2019-11-19",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "ml_neural_network",
+        "image": "img/ml_neural_network.jpg",
+        "description": "Часть 4. Нейросети и глубокое обучение",
+        "date": "2019-11-18",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "ml_ensemble",
+        "image": "img/ml_ensemble.jpg",
+        "description": "Часть 3. Ансамбли",
+        "date": "2019-11-16",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "ml_reinforcement",
+        "image": "img/ml_reinforcement.jpg",
+        "description": "Часть 2. Обучение с подкреплением",
+        "date": "2019-11-14",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "http_smuggling",
+        "image": "img/http_smuggling.jpg",
+        "description": "HTTP request smuggling",
+        "date": "2019-11-13",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        }
+    },
+    {
+        "id": "ml_classic",
+        "image": "img/ml_classic.jpg",
+        "description": "Часть 1. Классическое обучение",
+        "date": "2019-11-13",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "ml_map2",
+        "image": "img/ml_map2.jpg",
+        "description": "Омновные виды ML",
+        "date": "2019-11-12",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "mysql_backups",
+        "image": "img/replication_mysql.jpg",
+        "date": "2019-11-11",
+        "description": "MySQL users and backups.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "backup",
+            "permissions"
+        ]
+    },
+    {
+        "id": "ml_map",
+        "image": "img/ml_map.jpg",
+        "description": "Карта мира ML",
+        "date": "2019-11-11",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "ml_basic2",
+        "image": "img/ml_basic2.jpg",
+        "description": "Deep learning в контексте Artificial intelligence",
+        "date": "2019-11-09",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "ctf_bin",
+        "image": "img/ctf.jpg",
+        "date": "2019-10-29",
+        "description": "CTF binary tricks. Some tricks for binaries CTFs and another hacking. RCE(Remote Code Execution), LFI(Local File Inclusion)",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "file metadata",
+            "binary"
+        ]
+    },
+    {
+        "id": "camera",
+        "image": "img/camera.png",
+        "date": "2019-10-29 16:19",
+        "description": "Demo with link is inside. Google search queries",
+        "links": [
+            [
+                "https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm",
+                "Camera HTML5"
+            ]
+        ],
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "camera",
+            "js",
+            "html5",
+            "google",
+            "search"
+        ]
+    },
+    {
+        "id": "glassfish",
+        "image": "img/glassfish.png",
+        "date": "2019-10-28 10:53",
+        "description": "Basic info about popular web-application server",
+        "links": [
+            [
+                "https://docs.oracle.com/cd/E19798-01/821-1757/6nmni99aj/index.html",
+                "GF Oracle docs"
+            ]
+        ],
+        "uri": "glassfish.html",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "web",
+            "gf3",
+            "gf5",
+            "java ee",
+            "server"
+        ]
+    },
+    {
+        "id": "brutespray",
+        "image": "img/brute.jpg",
+        "date": "2019-10-26 17:32",
+        "description": "Brootforce with brutespray.py. ONLY FOR EDUCATION",
+        "links": [
+            "https://github.com/x90skysn3k/brutespray",
+            "https://github.com/x90skysn3k/brutespray"
+        ],
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "brutespray",
+            "hacking",
+            "nmap",
+            "ssh"
+        ]
+    },
+    {
+        "id": "python",
+        "image": "img/python.jpg",
+        "date": "2019-10-26 14:24",
+        "description": "Useful materials for python",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "native execution",
+            "ml",
+            "pip",
+            "python3",
+            "tenserflow",
+            "keras",
+            "teano",
+            "machine learning",
+            "whl",
+            "wheel"
+        ]
+    },
+    {
+        "id": "encryption",
+        "image": "img/cert_and_encrypt.png",
+        "date": "2019-10-26 14:02",
+        "description": "Commands for generate certs, extract certs",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "pkcs12",
+            "p12",
+            "jks",
+            "ssl",
+            "https",
+            "certificates"
+        ]
+    },
+    {
+        "id": "android",
+        "image": "img/android.jpg",
+        "date": "2019-10-25 17:15",
+        "description": "Basic commands and tricks for android.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "disable apps",
+            "android",
+            "fastboot",
+            "hosts",
+            "autostart",
+            "autorun",
+            "adb",
+            "ban ip",
+            "mount"
+        ]
+    },
+    {
+        "id": "ml_basic",
+        "image": "img/ml_basic.jpg",
+        "description": "Базовые состовляющие ML",
+        "date": "2019-10-08",
+        "category": {
+            "value": "Machine Learning",
+            "style": "cat-4",
+            "name": "ML"
+        }
+    },
+    {
+        "id": "fraud",
+        "image": "img/fraud.jpg",
+        "description": "Феникс ИнтерКом или бомж развод в Минске.",
+        "date": "2019-09-16",
+        "category": {
+            "value": "Another",
+            "style": "",
+            "name": "ANOTHER"
+        }
+    },
+    {
+        "id": "nginx",
+        "image": "img/nginx.jpg",
+        "date": "2019-09-09 20:50",
+        "description": "Nginx tricks",
+        "links": [
+            [
+                "http://kbeezie.com/protecting-folders-with-nginx/",
+                "http://kbeezie.com/protecting-folders-with-nginx/"
+            ]
+        ],
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenhiddenTags": [
+            "nginx",
+            "proxy",
+            "server",
+            "нгинкс",
+            "прокси",
+            "сервер",
+            "real ip",
+            "реальный айпи",
+            "прокидывание"
+        ]
+    },
+    {
+        "id": "vbox",
+        "image": "img/vbox.png",
+        "date": "2019-09-01 23:02",
+        "description": "Work with the Virtual Box",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "virtualization"
+        ]
+    },
+    {
+        "id": "terminal",
+        "image": "img/terminal.jpeg",
+        "date": "2019-09-01 22:13",
+        "description": "Customs for shells (Linux, MacOS, Android(Termux))",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "терминал",
+            "bash",
+            "shell",
+            "linux",
+            "macos",
+            "командная строка",
+            "cmd",
+            "sh",
+            "bash",
+            "автокомплит",
+            "autocomplete",
+            "bash-complete"
+        ]
+    },
+    {
+        "id": "grep",
+        "image": "img/logo.png",
+        "date": "2019-08-08 18:53",
+        "description": "How use grep",
+        "links": [
+            [
+                "http://www.electronick.org.ua/articles/linux/kak-ispolzovat-komandu-grep-v-linux/",
+                "http://www.electronick.org.ua/articles/linux/kak-ispolzovat-komandu-grep-v-linux/"
+            ]
+        ],
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "grep",
+            "ls",
+            "less",
+            "поиск"
+        ]
+    },
+    {
+        "id": "ctf",
+        "image": "img/ctf.jpg",
+        "description": "Наконец-то прошел курс CTF по категории WEB.",
+        "date": "2019-07-28",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        }
+    },
+    {
+        "id": "grammar_conbot",
+        "link": "https://web.telegram.org/#/im?p=@grammar_conbot",
+        "image": "img/grammar_conbot.jpg",
+        "description": "Написал еще одного бота, проверяющего грамматику. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
+        "date": "2019-07-16",
+        "category": {
+            "value": "Services",
+            "style": "cat-3",
+            "name": "SERVICES"
+        }
+    },
+    {
+        "id": "conbot",
+        "link": "https://web.telegram.org/#/im?p=@next_conbot",
+        "image": "img/conbot.jpg",
+        "description": "Пишу бота для телеграмма \"Conbot\". Специально для публичного тестирования поднял отдельный инстанс. Ссылка на самого бота по нажатию",
+        "date": "2019-07-12",
+        "category": {
+            "value": "Services",
+            "style": "cat-3",
+            "name": "SERVICES"
+        }
+    },
+    {
+        "id": "philips",
+        "image": "img/philips.png",
+        "description": "История о стареньком Philips Xenium W6610, слежке, практиках и хитростях андроида.",
+        "date": "2019-07-05",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        }
+    },
+    {
+        "id": "mysq-locks",
+        "image": "img/locks-mysql.jpg",
+        "date": "2019-06-01 13:42",
+        "description": "Show locks and another a mysql db info",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "locks",
+            "processes",
+            "transactions"
+        ]
+    },
+    {
+        "id": "git",
+        "image": "img/git.png",
+        "date": "2019-05-13 19:27",
+        "description": "Basic git commands and trics",
+        "links": [
+            [
+                "https://habr.com/ru/company/skillbox/blog/442260/",
+                "https://habr.com/ru/company/skillbox/blog/442260/"
+            ]
+        ],
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "revert reset hard",
+            "https url with creds"
+        ]
+    },
+    {
+        "id": "ssh",
+        "image": "img/ssh.png",
+        "date": "2019-05-12 11:27",
+        "description": "Generate, add and fix permissions for keys",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "ssh",
+            "chmod",
+            "generate ssh",
+            "scp",
+            "tunel",
+            "forwarding",
+            "port"
+        ]
+    },
+    {
+        "id": "docker",
+        "image": "img/docker.png",
+        "date": "2019-05-04 8:18",
+        "description": "Install docker, docker-compose. Basic docker commands.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "docker",
+            "containers",
+            "virtualization",
+            "install",
+            "hello world",
+            "docker-compose"
+        ]
+    },
+    {
+        "id": "screen",
+        "image": "img/screen.jpg",
+        "date": "2019-03-02 12:15",
+        "description": "The screen utility provides a way to run a command on a Linux system, detach from it, and then reattach later.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "screen",
+            "mutlisessions"
+        ]
+    },
+    {
+        "id": "github_privacy",
+        "image": "img/github.png",
+        "description": "История о том как пользователи гитхаба сами же сливают свои приватные данные...",
+        "date": "2019-02-25",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        }
+    },
+    {
+        "id": "linuxvswinvsmacos",
+        "image": "img/broken-pc-1.png",
+        "description": "Мои мысли о выборе ОС, а также опыте использования...",
+        "date": "2019-01-20",
+        "category": {
+            "value": "Another",
+            "style": "",
+            "name": "ANOTHER"
+        }
+    },
+    {
+        "id": "nginx_ssl",
+        "image": "img/nginx.jpg",
+        "date": "2018-12-27 17:01",
+        "description": "Let's encrypt guideline for nginx",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "links": [
+            [
+                "https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04",
+                "https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04"
+            ]
+        ],
+        "hiddenTags": [
+            "letsencrypt",
+            "certificates",
+            "https",
+            "ssl",
+            "nginx"
+        ]
+    },
+    {
+        "id": "grub",
+        "image": "img/grub.jpg",
+        "date": "2018-07-20 22:41",
+        "description": "Recover Grub2",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "loader",
+            "grub"
+        ]
+    },
+    {
+        "id": "linux-vnc",
+        "image": "img/vnc.png",
+        "date": "2018-08-25 21:46",
+        "description": "VNC server x11vnc for Linux",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "vnc",
+            "remote",
+            "desktop",
+            "linux"
+        ]
+    },
+    {
+        "id": "rabbitmq",
+        "image": "img/rabbitmq.png",
+        "date": "2018-06-12 19:06",
+        "description": "RabbitMQ is an open-source message-broker software (sometimes called message-oriented middleware) that originally implemented the Advanced Message Queuing Protocol (AMQP) and has since been extended with a plug-in architecture to support Streaming Text Oriented Messaging Protocol (STOMP), Message Queuing Telemetry Transport (MQTT), and other protocols",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "rabbitmq",
+            "events",
+            "event bus"
+        ]
+    },
+    {
+        "id": "mongodb",
+        "image": "img/mongo.png",
+        "date": "2019-02-11 23:17",
+        "description": "Tricks for mongo db",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "map",
+            "reduce",
+            "aggregation",
+            "sort",
+            "select",
+            "query",
+            "index",
+            "profiler",
+            "nosql"
+        ]
+    },
+    {
+        "id": "google",
+        "image": "img/google.png",
+        "date": "2018-03-19 17:49",
+        "description": "How search in google",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "links": [
+            [
+                "http://telegra.ph/Samouchitel-po-Google-02-11",
+                "http://telegra.ph/Samouchitel-po-Google-02-11"
+            ]
+        ],
+        "hiddenTags": [
+            "search",
+            "google"
+        ]
+    },
+    {
+        "id": "vim",
+        "image": "img/vim.png",
+        "date": "2018-10-10 22:19",
+        "description": "Hotkeys for vim",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "vim",
+            "editor"
+        ]
+    },
+    {
+        "id": "gpg",
+        "image": "img/gpg.png",
+        "date": "2019-01-11 19:54",
+        "description": "Generate and export a GPG key",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "secure",
+            "keys",
+            "keyserver"
+        ]
+    },
+    {
+        "id": "vpn",
+        "image": "img/vpn.jpg",
+        "date": "2019-02-13 15:00",
+        "description": "Connect VPN to diffrent OS in pictures",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "pptp",
+            "openvpn"
+        ]
+    },
+    {
+        "id": "regular",
+        "image": "img/regular.png",
+        "date": "1999-12-31 23:59",
+        "description": "Regular's expressions",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "regular",
+            "expressions",
+            "string"
+        ]
+    },
+    {
+        "id": "hacking-team",
+        "image": "img/ctf.jpg",
+        "date": "1999-12-31 23:59",
+        "description": "Hacking Team story",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "Hacking Team",
+            "hacking",
+            "docs",
+            "get started"
+        ]
+    },
+    {
+        "id": "reset-password",
+        "image": "img/ctf.jpg",
+        "date": "1999-12-31 23:59",
+        "description": "Reset any Linux password",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "hiddenTags": [
+            "linux",
+            "grub",
+            "bash",
+            "hack"
+        ]
+    },
+    {
+        "id": "windows",
+        "image": "img/windows.png",
+        "date": "2019-02-12 01:20",
+        "description": "Microsoft Windows tricks",
+        "category": {
+            "value": "Hacking",
+            "style": "cat-2",
+            "name": "HACKING"
+        },
+        "links": [
+            [
+                "https://www.kv.by/post/1055116-chto-delat-esli-zabyl-parol-ot-windows-10",
+                "https://www.kv.by/post/1055116-chto-delat-esli-zabyl-parol-ot-windows-10"
+            ]
+        ],
+        "hiddenTags": [
+            "users",
+            "shutdown",
+            "utilman",
+            "microsoft",
+            "hack"
+        ]
+    },
+    {
+        "id": "mysql-replication",
+        "image": "img/replication_mysql.jpg",
+        "date": "2018-07-18 23:26",
+        "description": "Guideline about mysql replications (mb not relevant).",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "replication",
+            "database",
+            "mysql",
+            "example",
+            "debian8",
+            "ubuntu14.04",
+            "linux"
+        ]
+    },
+    {
+        "id": "mysql-info",
+        "image": "img/sql_joins.png",
+        "date": "2018-10-08 23:14",
+        "description": "Basic mysql information. Isolation levels.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "уровни изоляции",
+            "transaction-isolation-level"
+        ]
+    },
+    {
+        "id": "ubuntu-hotspot",
+        "image": "img/ubuntu.png",
+        "date": "1999-12-31 23:59",
+        "description": "Wi-fi hotspot Ubuntu. Below I will show you how to use Unity's default network manager to create a wireless hotspot with Android devices support, tested in 64-bit Ubuntu 1404 with Nexus 4 and Sumsung Galaxy ace3.",
+        "category": {
+            "value": "DevOps",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "links": [
+            [
+                "http://ubuntuhandbook.org/index.php/2014/09/3-ways-create-wifi-hotspot-ubuntu/",
+                "http://ubuntuhandbook.org/index.php/2014/09/3-ways-create-wifi-hotspot-ubuntu/"
+            ]
+        ],
+        "hiddenTags": [
+            "Ubuntu 14.04 LTS",
+            "Hotspot",
+            "Wi-fi"
+        ]
+    },
+    {
+        "id": "ruby-rbenv-bundler",
+        "image": "img/ruby.jpg",
+        "date": "1999-12-31 23:59",
+        "description": "Cook Ruby+Bundler",
+        "category": {
+            "value": "Programming",
+            "style": "cat-3",
+            "name": "PROGRAMMING"
+        },
+        "hiddenTags": [
+            "Ubuntu 14.04 LTS",
+            "Ruby 2.2.3",
+            "rbenv",
+            "bundler"
+        ]
+    },
+    {
+        "id": "iam",
+        "image": "img/iam.png",
+        "description": "Кратко обо мне...",
+        "date": "1993-**-**",
+        "category": {
+            "value": "Another",
+            "style": "",
+            "name": "ANOTHER"
+        }
+    }
+]

@@ -1,0 +1,101 @@
+Start network network-manager
+<pre>sudo service network-manager start 
+</pre>
+Connect to wifi from terminal
+<pre>nmcli device wifi connect 'wifi_name_here' password 'wifi_password_here'
+</pre>
+Connect a network manager connection
+<pre>nmcli con up id ConnectionName
+</pre>
+Disconnect a network manager connection
+<pre>nmcli con down id ConnectionName
+</pre>
+Check network activity
+<pre>netstat -an
+</pre>
+Check SSL for domain
+<pre>curl --insecure -v https://ya.ru 2>&1 | awk 'BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }'
+</pre>
+
+<hr>
+
+Send http(tcp) request to 80 port by nc 
+<pre>printf "HEAD / HTTP/1.0\r\n\r\n" | nc tut.by 80
+</pre>
+Send tcp request from file by nc
+<pre>nc localhost 1234 &lt; test.txt
+</pre>
+
+<hr>
+
+For instance curl GET request
+<pre>curl -X GET -H "Content-Type: [any_headers]" -d "{body=[any_params|body]}" https://itcompressor.github.io
+</pre>
+
+<hr>
+
+Nmap scan if use -A - you will are detected
+<pre>nmap -A -T4 ya.ru
+</pre>
+icmp ping
+<pre>nmap -sn 192.168.1.0/24
+</pre>
+tcp syn ping
+<pre>nmap -sn -PS 192.168.1.0/24
+</pre>
+tcp ack ping
+<pre>nmap -sn -PA 192.168.1.0/24
+</pre>
+udp ping
+<pre>nmap -sn -PU 192.168.1.0/24
+</pre>
+tcp/ip ping (effictive but need root)
+<pre>nmap -sn -PO 192.168.1.0/24
+</pre>
+arp ping 
+<pre>nmap -sn -PR 192.168.1.0/24
+</pre>
+port scan
+<pre>nmap localhost -p 34000-36000
+nmap localhost -p 8080
+</pre>
+Usefull flags for nmap
+<pre>-PN - skip ping and force scan ports
+-sV - get info about services
+--script mysql-databases - list databases
+--script mysql-users - list users
+--script mysql-variables - list variables
+--script mysql-vuln-cve2012-2122 - check CVE-2012-2122 (broken authentication)
+</pre>
+
+<hr>
+
+Scan network script by ping
+<pre>echo 192.168.1.{1..254}|xargs -n1 -P0 ping -c1|grep "bytes from"
+</pre>
+Traceroute
+<pre>traceroute &lt;any_ip_or_domain&gt;
+</pre>
+See domains by same serts
+<pre>true | openssl s_client -showcerts -connect habrahabr.ru:443 2>&1 |openssl x509 -text | grep -o 'DNS:[^,]*' | cut -f2 -d:
+</pre>
+Download front-end (without restapi) by wget
+<pre>wget -r -k -l 7 -p -E -nc https://itcompressor.github.io/
+</pre>
+Download and run by wget
+<pre>wget -q -O – https://fixubuntu.com/fixubuntu.sh | bash
+</pre>
+
+<hr>
+
+Install net-tools (ifconfig)
+<pre>apt install net-tools
+</pre>
+Change mac address by ifconfig
+<pre>sudo ifconfig wlp3s0 down
+sudo ifconfig wlp3s0 hw ether 00:18:f3:4c:d6:6d
+sudo ifconfig wlp3s0 up
+</pre>
+Edit local dns
+<pre>sudo nano /etc/hosts
+</pre>

@@ -1,0 +1,11 @@
+Genearte pkcs12 store
+<pre>openssl pkcs12 -export -in certificate_test.pem -inkey privateKey_test.pem -out test.p12
+</pre>
+Generate pkcs12 without a private key
+<pre>openssl pkcs12 -export -nokeys -in certificate.cer -out pkcs12.pfx
+</pre>
+
+<hr>
+Extract cert from store by keytool
+<pre>keytool -exportcert -rfc -keystore server.jks -storepass password -alias server > server.pem
+</pre>

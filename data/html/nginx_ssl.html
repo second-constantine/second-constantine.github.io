@@ -1,0 +1,52 @@
+Добавляем репозиторий
+<pre>sudo add-apt-repository ppa:certbot/certbot
+</pre>
+Обновляем инфо по репозиториям
+<pre>sudo apt-get update
+</pre>
+Установка плагина для nginx
+<pre>sudo apt-get install python-certbot-nginx
+</pre>
+Добавляем домены, на которые будут перодить по https /etc/nginx/sites-available/default
+<pre>. . .
+server_name example.com www.example.com;
+. . .
+</pre>
+Перезагружаем nginx
+<pre>sudo systemctl reload nginx
+</pre>
+Получаем сертификаты
+<pre>sudo certbot --nginx -d example.com -d www.example.com
+</pre>
+Тестируем
+<pre>sudo certbot renew --dry-run
+</pre>
+Пример /etc/nginx/sites-available/default для кастомных сертификатов
+<pre>server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    
+    # Redirect all HTTP requests to HTTPS with a 301 Moved Permanently response.
+    return 301 https://$host$request_uri;
+}
+    
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    
+    server_name         next-way.by;
+    
+    ssl on;
+    ssl_certificate     /root/ssl/next-way.by.crt;
+    ssl_certificate_key /root/ssl/device.key;
+    ssl_prefer_server_ciphers on;
+    
+    location / {
+        access_log off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:8080;
+    }
+}    
+</pre>

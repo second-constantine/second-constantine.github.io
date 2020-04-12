@@ -1,0 +1,9 @@
+Установка
+<pre>sudo apt install x11vnc
+</pre>
+Настройка
+<pre>x11vnc -storepasswd
+</pre>
+Запуск (где oem - пользователь)
+<pre>x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/oem/.vnc/passwd -rfbport 5900 -shared
+</pre>

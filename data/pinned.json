@@ -1,26 +1,21 @@
 [
     {
-        "imageLink": "img/iam.png",
-        "link": "#?post_id=0",
+        "image": "img/iam.png",
+        "link": "#?target=iam",
         "description": "Кратко обо мне..."
     },
     {
-        "imageLink": "https://itcompressor.github.io/img/logo.png",
-        "description": "Мои технические заметки itcompressor.github.io",
-        "link": "https://itcompressor.github.io"
-    },
-    {
-        "imageLink": "img/conbot.jpg",
+        "image": "img/conbot.jpg",
         "description": "Conbot в телеграмме",
         "link": "https://web.telegram.org/#/im?p=@next_conbot"
     },
     {
-        "imageLink": "img/grammar_conbot.jpg",
+        "image": "img/grammar_conbot.jpg",
         "description": "Бот для проверки орфографии в телеграмме",
         "link": "https://web.telegram.org/#/im?p=@grammar_conbot"
     },
     {
-        "imageLink": "img/translator_conbot.jpg",
+        "image": "img/translator_conbot.jpg",
         "description": "Бот-переводчик",
         "link": "https://web.telegram.org/#/im?p=@translator_conbot"
     }

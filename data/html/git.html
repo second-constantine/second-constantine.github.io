@@ -1,0 +1,63 @@
+Посмотреть все изменения файла локально. При указании имени файла изменения будут показаны только для него. 
+<pre>git diff
+</pre>
+Просмотреть историю коммита. Может также использоваться для файла с git log -p my_file. Введите q, чтобы выйти.
+<pre>git log
+</pre>
+Просмотреть, кто, что и когда изменил в my_file. 
+<pre>git blame my_file
+</pre>
+Показать журнал изменений в заголовке локального репозитория. Отличный вариант для поиска утраченных данных.
+<pre>git reflog
+</pre>
+Отмена проиндексированных и непроиндексированных изменений с момента последнего коммита. (Revert git add .)
+<pre>git reset --hard HEAD 
+</pre>
+Отмена изменений my_commit
+<pre>git checkout my_commit 
+</pre>
+Отмена последствий изменений в my_commit. revert выполняет новый коммит после отмены изменений.
+<pre>git revert my_commit
+</pre>
+Удаление неотслеживаемых файлов в локальной рабочей директории. 
+<br>-n — флаг для пробного запуска, ничего не удаляется. 
+<br>-f — флаг для удаления файлов. 
+<br>-d — флаг для удаления неотслеживаемых директорий.
+<pre>git clean -n
+</pre>
+Добавляем поэтапные изменения в последний коммит.
+<pre>git commit --amend
+</pre>
+Отправка локальных тэгов в удаленный репозиторий. Хороший вариант для присвоения версий изменениям.
+<pre>git push my_remote --tags
+</pre>
+
+Полезная надстройка команд для git
+<pre>git config --global user.name "Username"
+git config --global user.email example@mail.com
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.br branch
+git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+git config --global alias.type 'cat-file -t'
+git config --global alias.dump 'cat-file -p'
+</pre>
+Откатить уже отправленные изменения:
+<pre>git reset --hard origin/master
+git push -f
+</pre>
+Добавление репозитория для отправки изменений
+<pre>git remote add origin git@bitbucket.org:any_user/any_repo.git
+</pre>
+Можно использовать такое представление урла чтобы не использовать креды (url pattern with creds)
+<pre>https://user:pass@domain/repo
+</pre>
+Переименовать ветку
+<pre>git branch -m master2 develop # - rename local branch
+git push origin :master2 # - delete old remote branch
+git push --set-upstream origin develop # push renamed branch and change origin to new
+</pre>
+Посчитать количество строчек кода в *.java:
+<pre>git ls-files | grep -P ".*(java)" | xargs wc -l
+</pre>

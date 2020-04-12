@@ -1,0 +1,33 @@
+Start web-server (domain) in debug mode
+<pre>as-install/bin/asadmin start-domain --debug domain1
+</pre>
+Stop web-server (domain)
+<pre>as-install/bin/asadmin stop-domain domain1
+</pre>
+Deploy application.war
+<pre>as-install/bin/asadmin deploy application.war
+</pre>
+Deploy application.war with context root
+<pre>as-install/bin/asadmin deploy --contextroot "/my_path" application.war
+</pre>
+List deployed applications
+<pre>as-install/bin/asadmin list-applications
+</pre>
+Undeploy application.war
+<pre>as-install/bin/asadmin undeploy application.war
+</pre>
+Set admin's panel password
+<pre>as-install/bin/asadmin change-admin-password
+</pre>
+Eenable admin panel for external connections
+<pre>as-install/bin/asadmin enable-secure-admin
+</pre>
+Admin panel uri
+<pre>http://localhost:4848
+</pre>
+Autodeploy path
+<pre>as-install/domains/domain1/autodeploy
+</pre>
+Env config path, example for JVM_HOME
+<pre>as-install/config/asenv.conf
+</pre>

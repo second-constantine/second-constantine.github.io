@@ -1,0 +1,21 @@
+Использование ssh (classic ssh)
+<pre>ssh -p 22 steeldriver@192.168.1.102
+</pre>
+Загружать и скачивать файлы через ssh (upload and downloads files)
+<pre>scp your_username@remotehost.edu:foobar.txt /local/dir
+</pre>
+Генерация ключей для работы через ssh (generate rsa keys for ssh)
+<pre>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+</pre>
+Добавление публичного ключа на сервер (add public key in authorized_keys)
+<pre>cat ~/.ssh/id_rsa.pub | ssh root@your_server "cat >> /home/qwer/.ssh/authorized_keys"
+</pre>
+Фикс прав для той же fedora (fix authorized_keys for fedora)
+<pre>chmod 644 ~/.ssh/authorized_keys
+</pre>
+Тунелирование ssh (т.е. проброс порта через подключение ssh) (port forwarding)
+<pre>ssh -L 27017:localhost:27017 user@site.com
+</pre>
+Правильные права для ключей (set right permissions for ssh keys)
+<pre>chmod 600 .ssh/ -R
+</pre>

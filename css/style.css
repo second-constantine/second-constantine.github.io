@@ -980,3 +980,7 @@ RESPONSIVE
          display:none;
     }
 }
+
+#iam {
+    max-width: 400px;
+}

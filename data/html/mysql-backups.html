@@ -1,0 +1,44 @@
+Create schema
+<pre>mysqldump —no-data - u USER -pPASSWORD DATABASE &gt; /path/to/file/schema.sql
+</pre>
+Create backup [with tables], for instance
+<pre>mysqldump -h10.1.1.56 -uyouruser -pyourpass -P3306 yourdb [table1] [table2] &gt; yourdb.sql
+</pre>
+Create backup + archive it
+<pre>mysqldump -u USER -pPASSWORD DATABASE | gzip &gt; `date +/path/to/outputfile.sql.%Y%m%d.%H%M%S.gz`
+</pre>
+Fill database from archive backup
+<pre>gunzip &lt; /path/to/outputfile.sql.gz | mysql -u USER -pPASSWORD DATABASE
+</pre>
+Fill database from backup
+<pre>mysql -u USER -pPASSWORD DATABASE &lt; /path/to/dump.sql
+</pre>
+
+<hr>
+
+Create new database
+<pre>mysqladmin -u USER -pPASSWORD create NEWDATABASE
+</pre>
+Show tables
+<pre>mysqlshow -u USER -pPASSWORD DATABASE
+</pre>
+
+<hr>
+
+Create new user
+<pre>CREATE USER 'qwer'@'%' IDENTIFIED BY 'password';
+</pre>
+Grant remote connection permissions
+<pre>GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
+</pre>
+Grant all permissions
+<pre>GRANT GRANT OPTION ON *.* TO 'qwer'@'%';
+GRANT ALL PRIVILEGES ON * . * TO 'qwer'@'%';
+FLUSH PRIVILEGES;
+</pre>
+Change password
+<pre>SET PASSWORD FOR 'user-name-here'@'hostname' = PASSWORD('new-password');
+</pre>
+Change password (new mysql 8+)
+<pre>ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+</pre>

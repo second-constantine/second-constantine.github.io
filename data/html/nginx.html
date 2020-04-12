@@ -1,0 +1,30 @@
+Путь к настройке nginx (nginx config path)
+<pre>/etc/nginx/sites-available/default
+</pre>
+Проверка корректности конфига (nginx config validation)
+<pre>nginx -t
+</pre>
+Рестарт (restart)
+<pre>service nginx reload
+</pre>
+Пример для прокидывания настоящего ip при проксировании (proxy config with forwarding real ip)
+<pre>location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass http://localhost:8080/;
+}
+</pre>
+Создать файл для идентификации (creating .htpasswd)
+<pre>htpasswd -c /var/www/domain.com/admin/.htpasswd username
+</pre>
+Пример правила с выдачей статики + пароль для идентификации (rule about static source + basic authentication protection)
+<pre>location /secure/ {
+    alias /home/user/protected_folder/;
+    autoindex on;
+    auth_basic "Administrator Login";
+    auth_basic_user_file /home/user/.htpasswd;
+}
+</pre>
+Правило для защиты от умников (hide the password file from prying eyes)
+<pre>location ~ /\. { deny  all; }
+</pre>

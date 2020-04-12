@@ -1,0 +1,38 @@
+Перезагрузка
+<pre>shutdown -r
+</pre>
+Выключение
+<pre>shutdown -s
+</pre>
+Завершение сессии
+<pre>shutdown -l
+</pre>
+Выполнение по времени, где xx количество секунд для выключения\перезагрузки\завершения сессии
+<pre>shutdown -t xx
+</pre>
+Запуск диалогового окна для завершения работы
+<pre>shutdown -i
+</pre>
+или
+<pre>shutdown -a
+</pre>
+Дополнительная опция для принудительного выполнения
+<pre>-f
+</pre>
+Пример выключения 30+ минут (example shutdown 30+ minutes)
+<pre>shutdown /s /t 2000
+</pre>
+Изменить пароль
+<pre>net user current_user password
+</pre>
+Добавить нового пользователя
+<pre>net user /add new_user password
+</pre>
+Включение и выключение учетной записи администратора
+<pre>net user Администратор /active:yes
+net user Администратор /active:no
+</pre>
+С помощью таких манипуляций можно вызвать консоль через специальные возможности
+<pre>move d:\windows\system32\utilman.exe d:\windows\system32\utilman2.exe
+copy d:\windows\system32\cmd.exe d:\windows\system32\utilman.exe
+</pre>

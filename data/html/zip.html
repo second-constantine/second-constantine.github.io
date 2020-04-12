@@ -1,0 +1,27 @@
+Create zip archive
+<pre>zip -r myarch.zip mydir/*
+</pre>
+Unzip rar archive
+<pre>unrar e file.rar
+</pre>
+Unzip rar with keeping hierarchy
+<pre>unrar x file.rar
+</pre>
+Create tar container
+<pre>tar -cvf name.tar /path/to/file1 /path/to/file2 /path/to/file3
+</pre>
+Unzip tar container (archives)
+<pre>tar -xvf foo.tar
+tar -xvzf foo.tar.gz
+tar -xvjf foo.tar.bz2
+</pre>
+Unzip tar.xz
+<pre>tar -xf file.tar.xz
+</pre>
+Install 7z in debian like OS
+<pre>apt install p7zip
+</pre>
+Examples for 7z
+<pre>7z x -so yourfile.tar.7z | tar xf - -C target_dir
+7z x yourfile.7z
+</pre>

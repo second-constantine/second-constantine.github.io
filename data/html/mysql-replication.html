@@ -1,0 +1,98 @@
+<h4>Имеем</h4>
+192.168.1.43 - master (Debian 8)<br>
+192.168.1.52 - slave  (Ubuntu 14.04 LTS)<br>
+my_test_db - название выбранной схемы для реплики<br>
+/etc/mysql/my.cnf - файл настроек mysql<br>
+
+<hr>
+
+<h4>На мастере</h4>
+1) Редактируем my.cnf, выбираем ID сервера, произвольное число, лучше начинать с 1
+<pre>
+server-id=1
+</pre>
+путь к бинарному логу
+<pre>
+log_bin = /var/log/mysql/mysql-bin.log
+</pre>
+название бд для реплики
+<pre>
+binlog_do_db = my_test_db
+</pre>
+2) Перезагружаем mysql
+<pre>
+/etc/init.d/mysql restart
+</pre>
+3) Входим в консоль mysql
+<pre>
+mysql -u root -p
+</pre>
+4) Выполняем запросы для реплики
+<pre>
+GRANT REPLICATION SLAVE ON *.* TO
+'slave_user'@'%' IDENTIFIED BY
+'password'; FLUSH PRIVILEGES;
+</pre>
+<pre>
+USE my_test_db;
+FLUSH TABLES WITH READ LOCK;
+</pre>
+ещё
+<pre>
+SHOW MASTER STATUS;
+</pre>
+получаем что-то типа
+<pre>
+output: mysql-bin.000001 и 107
+</pre>
+ещё
+<pre>
+UNLOCK TABLES;
+</pre>
+5) Делаем бэкап(опционально)
+<pre>
+mysqldump -u root -p my_test_db > my_test_db.sql
+</pre>
+
+<hr>
+
+<h4>На слейве</h4>
+1) Редактируем my.cnf, выбираем ID сервера следующим числом после мастера
+<pre>
+server-id=2
+</pre>
+путь к relay логу
+<pre>
+relay-log = /var/log/mysql/mysql-relay-bin.log
+</pre>
+путь к бинарному логу
+<pre>
+log_bin = /var/log/mysql/mysql-bin.log
+</pre>
+название бд для реплики
+<pre>
+binlog_do_db = my_test_db
+</pre>
+3) Входим в консоль mysql
+<pre>
+mysql -u root -p
+</pre>
+4) Выполняем запросы для реплики (нужно будет создать пользователя для репликации,
+можно посмотреть <a href="https://itcompressor.github.io/#?target=7">тут</a>)
+<pre>
+CHANGE MASTER TO MASTER_HOST='10.10.0.1',
+MASTER_USER='slave_user',
+MASTER_PASSWORD='password',
+MASTER_LOG_FILE = 'mysql-bin.000001',
+MASTER_LOG_POS = 107;
+</pre>
+ещё
+<pre>
+START SLAVE;
+</pre>
+ещё
+<pre>
+SHOW SLAVE STATUS;
+</pre>
+
+<hr>

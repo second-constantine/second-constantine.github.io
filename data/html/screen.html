@@ -1,0 +1,23 @@
+Пример команды для запуска в скрине
+<pre>screen -dmS SCREEN_NAME /bin/bash -c "/opt/somescrip.sh 2>&1 > /opt/mylog.log"
+</pre>
+Запуск скрипта в screen
+<pre>screen -dmS SCREEN_NAME /bin/bash -c "/home/user/script.sh args"
+</pre>
+Показать сессии
+<pre>screen -ls
+</pre>
+Возобновить определенную сессию
+<pre>screen -r 20673.pts-0.srv 
+</pre>
+Возобновить предыдущую сессию
+<pre>screen -x 
+</pre>
+Основные комбинации
+<pre>Ctrl+A затем «c» — создать окно screen
+Ctrl+A затем «p» — переключиться к предыдущему окну screen
+Ctrl+A затем «n» — переключиться к следующему окну screen
+Ctrl+A затем «d» — отключиться от screen оставив сеансы работающими
+Ctrl+D — выйти из всех сеансов screen
+Ctrl+A затем «H» — записывать в журнал
+</pre>

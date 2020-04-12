@@ -1,0 +1,31 @@
+Найстройки баша хранятся в (Shell settings)
+<pre>.bashrc - linux like
+.bash_profile - macos
+</pre>
+Установка bash-completion для автокомплита в терминале (autocomplete in a terminal)
+<pre>apt install bash-completion
+</pre>
+Добавить папку с исполняемыми файлами в баш для быстрого доступа (add path for execute files)
+<pre>export PATH=$PATH:~/s/
+</pre>
+Красивый терминал MacOS (pretty terminal for MacOS)
+<pre>export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
+</pre>
+Pretty terminal for android (kali linux theme)
+<pre>export PS1="\[\033[31m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
+</pre>
+Если не работает автокомплит (if bash-completion not working)
+<pre>if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+</pre>

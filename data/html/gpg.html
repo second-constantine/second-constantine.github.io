@@ -1,0 +1,12 @@
+Генерация ключа
+<pre>gpg --full-gen-key
+</pre>
+Экспорт ключа
+<pre>gpg --export-secret-keys >~/.gnupg/secring.gpg
+</pre>
+Просмотр ключей
+<pre>gpg --list-keys
+</pre>
+Экспорт ключа на сервер
+<pre>gpg --keyserver certserver.pgp.com --recv-key 418AB804154FA73EE5F74374F8E83547B8A3FA10
+</pre>

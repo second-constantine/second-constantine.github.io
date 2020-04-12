@@ -1,0 +1,45 @@
+Check duplicates
+<pre>SELECT name, COUNT(*) c
+FROM my_table
+GROUP BY name
+HAVING c > 1;
+</pre>
+Execute unsafe operation (change SQL_SAFE_UPDATES)
+<pre>
+SET SQL_SAFE_UPDATES = 0;
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal','Tom B. Erichsen','Skagen 21','Stavanger','4006','Norway');
+SET SQL_SAFE_UPDATES = 1;
+</pre>
+Update
+<pre>UPDATE Customers
+SET ContactName='Alfred Schmidt', City='Hamburg'
+WHERE CustomerName='Alfreds Futterkiste';
+</pre>
+Create column with index
+<pre>ALTER TABLE mytable
+ADD COLUMN myarguments VARCHAR(255),
+ADD INDEX (myarguments);
+</pre>
+Add column with create foreign key
+<pre>ALTER TABLE mytable
+ADD COLUMN mytable_new_column BIGINT(20) DEFAULT NULL,
+ADD CONSTRAINT FK_EXTERNAL_COLUMN_IDX FOREIGN KEY (mytable_new_column) REFERENCES external_table (id_field);
+</pre>
+Check pogress (alter table and etc)
+<pre>SELECT EVENT_NAME,
+WORK_COMPLETED,
+WORK_ESTIMATED,
+WORK_COMPLETED / WORK_ESTIMATED * 100 as completed_percents
+FROM performance_schema.events_stages_current;
+</pre>
+Copy data from table1 to table2
+<pre>INSERT INTO table2(id, field1, field2)
+select  id, field1, field2 from  table1;
+</pre>
+Drop foreign keys + modify
+<pre>alter table table1
+drop foreign key fk_field1_id,
+drop foreign key fk_field2_id,
+MODIFY field1 varchar(50) null;
+</pre>

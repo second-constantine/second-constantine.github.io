@@ -1,0 +1,57 @@
+Postgres login commands
+<pre>sudo -u postgres psql
+</pre>
+<pre>psql -d mydb -U myuser
+</pre>
+<pre>psql -h myhost -d mydb -U myuser
+</pre>
+Postgres login with promt password
+<pre>psql -h myhost -d mydb -U myuser -W
+</pre>
+
+<hr>
+
+Terminate all connections for db
+<pre>SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.datname = 'my_database_name'
+AND pid &lt;&gt; pg_backend_pid();
+</pre>
+Set password for user
+<pre>ALTER ROLE user_name WITH PASSWORD 'user_password';
+</pre>
+
+<hr>
+
+Create unique index
+<pre>CREATE UNIQUE INDEX title_idx ON films (title);
+</pre>
+Create index for not case sensetive search
+<pre>CREATE INDEX ON films ((lower(title)));
+</pre>
+Create index with different  sort
+<pre>CREATE INDEX title_idx_german ON films (title COLLATE "de_DE");
+</pre>
+Create index with different null position
+<pre>CREATE INDEX title_idx_nulls_low ON films (title NULLS FIRST);
+</pre>
+Create index with different fill
+<pre>CREATE UNIQUE INDEX title_idx ON films (title) WITH (fillfactor = 70);
+</pre>
+Create GIN index with turn off performance update
+<pre>CREATE INDEX gin_idx ON documents_table USING GIN (locations) WITH (fastupdate = off);
+</pre>
+Create index with position in indexspace
+<pre>CREATE INDEX code_idx ON films (code) TABLESPACE indexspace;
+</pre>
+Create GiST index
+<pre>CREATE INDEX pointloc
+ON points USING gist (box(location,location));
+SELECT * FROM points
+WHERE box(location,location) && '(0,0),(1,1)'::box;
+</pre>
+Create index witout write blocking
+<pre>CREATE INDEX CONCURRENTLY sales_quantity_index ON sales_table (quantity);
+</pre>
+
+<hr>

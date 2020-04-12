@@ -1,0 +1,19 @@
+Просмотр текущих локов на БД (check locks)
+<pre>SELECT * FROM information_schema.innodb_locks il 
+LEFT JOIN information_schema.innodb_trx itr ON itr.trx_id = il.lock_trx_id;
+</pre>
+Еще один способ просмотра локов, но ифны дает меньше (check locks, but less info)
+<pre>SELECT * FROM information_schema.innodb_locks;
+</pre>
+Просмотр транзакций (check transactions)
+<pre>SELECT * FROM information_schema.innodb_trx;
+</pre>
+Просмотр всех процессов (check all processes)
+<pre>SHOW FULL PROCESSLIST;
+</pre>
+Убить транзакцию (kill connection)
+<pre>kill connection [trx_mysql_thread_id];
+</pre>
+Просмотр полного статуса бд (check full status)
+<pre>SHOW ENGINE INNODB STATUS;
+</pre>

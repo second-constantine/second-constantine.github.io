@@ -1,0 +1,44 @@
+<p>Below I will show you how to use Unity&#8217;s default network manager to create a wireless hotspot with Android
+    devices support, tested in 64-bit Ubuntu 1404 with Nexus 4 and Sumsung Galaxy ace3.</p>
+<p><b>1.</b> Disable WIFI and plug in an internet cable to your laptop so that your Ubuntu is connect to a wired
+    internet and wireless is disabled.</p>
+<p><b>2.</b> Go to Network Icon on top panel -> Edit Connections &#8230;, then click the <b>Add</b> button in the pop-up
+    window.</p>
+<p><a href="img/edit-network-connections.jpg"><img src="img/edit-network-connections.jpg" alt="Edit Network Connections"
+                                                   width="500" height="275"
+                                                   class="aligncenter size-full wp-image-3978"/></a></p>
+<p><b>3.</b> Choose <b>Wi-Fi</b> from the drop-down menu when you&#8217;re asked to choose a connection type:</p>
+<p><a href="img/choose-wifi-connection-type.jpg"><img src="img/choose-wifi-connection-type.jpg"
+                                                      alt="Choose Connection Type" width="500" height="129"
+                                                      class="aligncenter size-full wp-image-3979"/></a></p>
+<p><b>4.</b> In next window, do:</p>
+<ul>
+    <li>Type in a connection name. The name will be used later.</li>
+    <li>Type in a SSID</li>
+    <li>Select mode: Infrastructure</li>
+    <li>Device MAC address: select your wireless card from drop-down menu.</li>
+</ul>
+<p><a href="img/create-wifi-hotspot.jpg"><img src="img/create-wifi-hotspot.jpg" alt="create-wifi-hotspot" width="370"
+                                              height="395" class="aligncenter size-full wp-image-3980"/></a></p>
+<p><b>5.</b> Go to <b>Wi-Fi Security</b> tab, select security type <b>WPA &#038; WPA2 Personal</b> and set a password.
+</p>
+<p><b>6.</b> Go to <b>IPv4 Settings</b> tab, from Method drop-down box select <b>Shared to other computers</b>.</p>
+<p><a href="img/wifi-ipv4.jpg"><img src="img/wifi-ipv4.jpg" alt="wifi-ipv4" width="370" height="395"
+                                    class="aligncenter size-full wp-image-3981"/></a></p>
+<p>When done, click the <b>save</b> button.</p>
+<p>After above steps, a configuration file created under <i>/etc/NetworkManager/system-connections</i> directory. File
+    name is same to the connection name you typed in step 4.</p>
+<p>Now press <b>Ctrl+Alt+T</b> on keyboard to open terminal. When it opens, paste the commands below and hit enter to
+    edit the configuration file:</p>
+<pre style="border:none;">gksu gedit /etc/NetworkManager/system-connections/<b>wifi-hotspot</b></pre>
+<p>Replace <b>wifi-hotspt</b> with the connection name you typed in step 4.</p>
+<p>When the file opens, find out the line <code>mode=infrastructure</code> and change it to <code>mode=ap</code>.
+    Finally save the file.</p>
+<p><a href="img/change-mode.jpg"><img src="img/change-mode.jpg" alt="Change to AP mode" width="520" height="249"
+                                      class="aligncenter size-full wp-image-3982"/></a></p>
+<p>When everything&#8217;s done, enable WIFI from Network Manager icon on the panel. It should automatically connect to
+    the hotspot you created. If not, select &#8220;Connect to Hidden Wi-Fi Network &#8230;&#8221; and select it from the
+    drop-down box.</p>
+<p><a href="img/wifi-hotspot.jpg"><img src="img/wifi-hotspot.jpg" alt="wifi-hotspot" width="497" height="237"
+                                       class="aligncenter size-full wp-image-3983"/></a></p>
+<p>Now you can search and connect the access point from your Android mobile and enjoy!</p>
