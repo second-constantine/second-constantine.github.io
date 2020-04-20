@@ -993,6 +993,7 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "mongo",
             "map",
             "reduce",
             "aggregation",
