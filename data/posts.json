@@ -14,7 +14,12 @@
             "value": "Services",
             "style": "cat-3",
             "name": "SERVICES"
-        }
+        },
+        "hiddenTags": [
+            "translator",
+            "bot",
+            "conbot"
+        ]
     },
     {
         "id": "mac",
@@ -62,6 +67,7 @@
             "name": "HACKING"
         },
         "hiddenTags": [
+            "ctf",
             "file metadata",
             "binary",
             "RCE(Remote Code Execution)",
@@ -126,6 +132,8 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "kotlin",
+            "java",
             "jdk",
             "jstack",
             "bytecode",
@@ -145,6 +153,7 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "postgres",
             "database",
             "PSQL",
             "create index",
@@ -173,6 +182,7 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "archives",
             "zip",
             "unrar",
             "tar",
@@ -204,6 +214,7 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "network",
             "traceroute",
             "nmap",
             "nc",
@@ -231,6 +242,7 @@
             "name": "HACKING"
         },
         "hiddenTags": [
+            "cheat sheet",
             "RCE(Remote Code Execution)",
             "LFI(Local File Inclusion)",
             "nc",
@@ -259,6 +271,8 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "ubuntu",
+            "users",
             "samba",
             "skype",
             "snap",
@@ -307,6 +321,8 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "mysql",
+            "mariadb",
             "index",
             "unsafe",
             "duplicates",
@@ -328,6 +344,7 @@
             "name": "HACKING"
         },
         "hiddenTags": [
+            "metasploit",
             "hack",
             "payloads",
             "XSLT",
@@ -385,7 +402,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "ml_neural_network",
@@ -396,7 +417,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "ml_ensemble",
@@ -407,7 +432,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "ml_reinforcement",
@@ -418,7 +447,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "http_smuggling",
@@ -429,7 +462,11 @@
             "value": "Hacking",
             "style": "cat-2",
             "name": "HACKING"
-        }
+        },
+        "hiddenTags": [
+            "http smuggling",
+            "hack"
+        ]
     },
     {
         "id": "ml_classic",
@@ -440,7 +477,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "ml_map2",
@@ -451,7 +492,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "mysql_backups",
@@ -464,6 +509,7 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "mysql",
             "backup",
             "permissions"
         ]
@@ -477,7 +523,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "ml_basic2",
@@ -488,7 +538,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "ctf_bin",
@@ -501,6 +555,7 @@
             "name": "HACKING"
         },
         "hiddenTags": [
+            "ctf",
             "file metadata",
             "binary"
         ]
@@ -522,6 +577,7 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "demo",
             "camera",
             "js",
             "html5",
@@ -614,7 +670,8 @@
             "jks",
             "ssl",
             "https",
-            "certificates"
+            "certificates",
+            "encryption"
         ]
     },
     {
@@ -648,7 +705,11 @@
             "value": "Machine Learning",
             "style": "cat-4",
             "name": "ML"
-        }
+        },
+        "hiddenTags": [
+            "machine learning",
+            "ml"
+        ]
     },
     {
         "id": "fraud",
@@ -659,7 +720,10 @@
             "value": "Another",
             "style": "",
             "name": "ANOTHER"
-        }
+        },
+        "hiddenTags": [
+            "fraud"
+        ]
     },
     {
         "id": "nginx",
@@ -700,6 +764,8 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "vbox",
+            "virtual box",
             "virtualization"
         ]
     },
@@ -714,6 +780,7 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "terminal",
             "терминал",
             "bash",
             "shell",
@@ -760,7 +827,11 @@
             "value": "Hacking",
             "style": "cat-2",
             "name": "HACKING"
-        }
+        },
+        "hiddenTags": [
+            "ctf",
+            "web"
+        ]
     },
     {
         "id": "grammar_conbot",
@@ -772,7 +843,12 @@
             "value": "Services",
             "style": "cat-3",
             "name": "SERVICES"
-        }
+        },
+        "hiddenTags": [
+            "conbot",
+            "grammar",
+            "telegram"
+        ]
     },
     {
         "id": "conbot",
@@ -784,7 +860,11 @@
             "value": "Services",
             "style": "cat-3",
             "name": "SERVICES"
-        }
+        },
+        "hiddenTags": [
+            "conbot",
+            "telegram"
+        ]
     },
     {
         "id": "philips",
@@ -795,7 +875,11 @@
             "value": "Hacking",
             "style": "cat-2",
             "name": "HACKING"
-        }
+        },
+        "hiddenTags": [
+            "philips",
+            "trackers"
+        ]
     },
     {
         "id": "mysq-locks",
@@ -808,6 +892,8 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "mysql",
+            "mariadb",
             "locks",
             "processes",
             "transactions"
@@ -830,6 +916,8 @@
             "name": "PROGRAMMING"
         },
         "hiddenTags": [
+            "git",
+            "ssh",
             "revert reset hard",
             "https url with creds"
         ]
@@ -897,7 +985,11 @@
             "value": "Hacking",
             "style": "cat-2",
             "name": "HACKING"
-        }
+        },
+        "hiddenTags": [
+            "github",
+            "privacy"
+        ]
     },
     {
         "id": "linuxvswinvsmacos",
@@ -908,7 +1000,12 @@
             "value": "Another",
             "style": "",
             "name": "ANOTHER"
-        }
+        },
+        "hiddenTags": [
+            "linux",
+            "macos",
+            "windows"
+        ]
     },
     {
         "id": "nginx_ssl",
@@ -927,11 +1024,11 @@
             ]
         ],
         "hiddenTags": [
+            "nginx",
             "letsencrypt",
             "certificates",
             "https",
-            "ssl",
-            "nginx"
+            "ssl"
         ]
     },
     {
@@ -1052,6 +1149,7 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "gpg",
             "secure",
             "keys",
             "keyserver"
@@ -1068,6 +1166,10 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "vpn",
+            "windows",
+            "linux",
+            "macos",
             "pptp",
             "openvpn"
         ]
@@ -1119,7 +1221,8 @@
             "linux",
             "grub",
             "bash",
-            "hack"
+            "hack",
+            "password"
         ]
     },
     {
@@ -1139,6 +1242,7 @@
             ]
         ],
         "hiddenTags": [
+            "winodws",
             "users",
             "shutdown",
             "utilman",
@@ -1157,6 +1261,7 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "mysql",
             "replication",
             "database",
             "mysql",
@@ -1177,6 +1282,8 @@
             "name": "DEVOPS"
         },
         "hiddenTags": [
+            "mysql",
+            "mariadb",
             "уровни изоляции",
             "transaction-isolation-level"
         ]
@@ -1229,6 +1336,11 @@
             "value": "Another",
             "style": "",
             "name": "ANOTHER"
-        }
+        },
+        "hiddenTags": [
+            "second_constantine",
+            "telegram",
+            "instagram"
+        ]
     }
 ]
