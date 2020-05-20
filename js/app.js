@@ -46,7 +46,7 @@ app.controller("CoreController",
 
         $scope.clickCategory = function (category) {
             let filteredPosts = $scope.allPosts.filter(post => post.category.name == category)
-            document.title = "Constantine's blog"
+            document.title = "Constantine's tech blog"
             if (filteredPosts.length > 2) {
                 $scope.newPosts = filteredPosts.slice(0, 2)
                 $scope.posts = filteredPosts.slice(2)
