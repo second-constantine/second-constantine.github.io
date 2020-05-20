@@ -1,40 +1,42 @@
-Start network network-manager
+<img width="100%" src="img/nmap.jpg" alt="">
+
+Запуск сервиса network-manager
 <pre>sudo service network-manager start 
 </pre>
-Connect to wifi from terminal
+Подключение к wifi из под терминала
 <pre>nmcli device wifi connect 'wifi_name_here' password 'wifi_password_here'
 </pre>
-Connect a network manager connection
+Подключиться к конекшену в network-manager
 <pre>nmcli con up id ConnectionName
 </pre>
-Disconnect a network manager connection
+Отключиться от конекшена в network-manager
 <pre>nmcli con down id ConnectionName
 </pre>
-Check network activity
+Просмотр активности сети
 <pre>netstat -an
 </pre>
-Check SSL for domain
+Просмотр SSL сертификата для домена
 <pre>curl --insecure -v https://ya.ru 2>&1 | awk 'BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }'
 </pre>
 
 <hr>
 
-Send http(tcp) request to 80 port by nc 
+Отправка http(tcp) запроса на 80 через nc
 <pre>printf "HEAD / HTTP/1.0\r\n\r\n" | nc tut.by 80
 </pre>
-Send tcp request from file by nc
+Отправка файла через nc
 <pre>nc localhost 1234 &lt; test.txt
 </pre>
 
 <hr>
 
-For instance curl GET request
+Пример GET запроса через curl
 <pre>curl -X GET -H "Content-Type: [any_headers]" -d "{body=[any_params|body]}" https://itcompressor.github.io
 </pre>
 
 <hr>
 
-Nmap scan if use -A - you will are detected
+Если сканируете через nmap с включеным флагом -A, то вы оставляете хороший след
 <pre>nmap -A -T4 ya.ru
 </pre>
 icmp ping
@@ -59,7 +61,7 @@ port scan
 <pre>nmap localhost -p 34000-36000
 nmap localhost -p 8080
 </pre>
-Usefull flags for nmap
+Полезные флаги для nmap
 <pre>-PN - skip ping and force scan ports
 -sV - get info about services
 --script mysql-databases - list databases
@@ -70,32 +72,32 @@ Usefull flags for nmap
 
 <hr>
 
-Scan network script by ping
+Сканирование сети с помощью ping
 <pre>echo 192.168.1.{1..254}|xargs -n1 -P0 ping -c1|grep "bytes from"
 </pre>
 Traceroute
 <pre>traceroute &lt;any_ip_or_domain&gt;
 </pre>
-See domains by same serts
+Просмотр доменов\поддоменов с тем же серификатом
 <pre>true | openssl s_client -showcerts -connect habrahabr.ru:443 2>&1 |openssl x509 -text | grep -o 'DNS:[^,]*' | cut -f2 -d:
 </pre>
-Download front-end (without restapi) by wget
+Скачать фронт (без restapi) через wget
 <pre>wget -r -k -l 7 -p -E -nc https://itcompressor.github.io/
 </pre>
-Download and run by wget
+Скачать через wget и запустить скрип
 <pre>wget -q -O – https://fixubuntu.com/fixubuntu.sh | bash
 </pre>
 
 <hr>
 
-Install net-tools (ifconfig)
+Установка net-tools (ifconfig)
 <pre>apt install net-tools
 </pre>
-Change mac address by ifconfig
+Изменение мак адреса через ifconfig
 <pre>sudo ifconfig wlp3s0 down
 sudo ifconfig wlp3s0 hw ether 00:18:f3:4c:d6:6d
 sudo ifconfig wlp3s0 up
 </pre>
-Edit local dns
+Редактирование локального dns
 <pre>sudo nano /etc/hosts
 </pre>
