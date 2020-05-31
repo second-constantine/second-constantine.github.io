@@ -1,5 +1,27 @@
 [
     {
+        "id": "jira_conbot",
+        "image": "img/jira-conbot.jpg",
+        "date": "2020-05-31",
+        "links": [
+            [
+                "https://web.telegram.org/#/im?p=@jira_conbot",
+                "@jira_conbot"
+            ]
+        ],
+        "description": "Бот для работы с JIRA.",
+        "category": {
+            "value": "Services",
+            "style": "cat-3",
+            "name": "SERVICES"
+        },
+        "hiddenTags": [
+            "jira",
+            "bot",
+            "conbot"
+        ]
+    },
+    {
         "id": "translator_conbot",
         "image": "img/translator_conbot.jpg",
         "date": "2020-01-09",
@@ -9,7 +31,7 @@
                 "@translator_conbot"
             ]
         ],
-        "description": "Бот-переводчик в телегармм. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
+        "description": "Бот-переводчик в телегармм.",
         "category": {
             "value": "Services",
             "style": "cat-3",

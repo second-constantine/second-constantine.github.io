@@ -5,11 +5,6 @@
         "description": "Кратко обо мне..."
     },
     {
-        "image": "img/conbot.jpg",
-        "description": "Conbot в телеграмме",
-        "link": "https://web.telegram.org/#/im?p=@next_conbot"
-    },
-    {
         "image": "img/grammar_conbot.jpg",
         "description": "Бот для проверки орфографии в телеграмме",
         "link": "https://web.telegram.org/#/im?p=@grammar_conbot"
@@ -18,5 +13,10 @@
         "image": "img/translator_conbot.jpg",
         "description": "Бот-переводчик",
         "link": "https://web.telegram.org/#/im?p=@translator_conbot"
+    },
+    {
+        "image": "img/jira-conbot.jpg",
+        "description": "Бот для работы с JIRA",
+        "link": "https://web.telegram.org/#/im?p=@jira_conbot"
     }
 ]
