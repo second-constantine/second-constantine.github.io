@@ -11,7 +11,7 @@
         ],
         "description": "Бот для работы с JIRA.",
         "category": {
-            "value": "Services",
+            "value": "Сервисы",
             "style": "cat-3",
             "name": "SERVICES"
         },
