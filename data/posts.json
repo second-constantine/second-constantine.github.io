@@ -20,6 +20,43 @@
             "bot",
             "conbot"
         ]
+    },{
+        "id": "network",
+        "image": "img/nmap.jpg",
+        "date": "2020-05-20",
+        "description": "Заметки по сканированию, мониторингу сетей\\ip\\доменов",
+        "links": [
+            [
+                "https://www.cyberciti.biz/security/nmap-command-examples-tutorials/",
+                "Top 32 Nmap Command Examples For Linux Sys/Network Admins"
+            ],
+            [
+                "https://askubuntu.com/questions/57339/connect-disconnect-from-vpn-from-the-command-line",
+                "Connect/disconnect from VPN from the command line"
+            ]
+        ],
+        "category": {
+            "value": "Девопс",
+            "style": "cat-1",
+            "name": "DEVOPS"
+        },
+        "hiddenTags": [
+            "network",
+            "traceroute",
+            "nmap",
+            "nc",
+            "ifconfig",
+            "mac",
+            "hosts",
+            "network-manager",
+            "nmcli",
+            "curl",
+            "wget",
+            "netstat",
+            "certs",
+            "nmcli",
+            "vulns"
+        ]
     },
     {
         "id": "translator_conbot",
@@ -33,7 +70,7 @@
         ],
         "description": "Бот-переводчик в телегармм.",
         "category": {
-            "value": "Services",
+            "value": "Сервисы",
             "style": "cat-3",
             "name": "SERVICES"
         },
@@ -49,7 +86,7 @@
         "date": "2019-12-24",
         "description": "MacOS. Basic utils and custom for a MacOS. Run vnc server. Install live usbboot.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -84,7 +121,7 @@
         "date": "2019-12-17",
         "description": "CTF web tricks. Some tricks for web CTFs and another hacking. RCE(Remote Code Execution), LFI(Local File Inclusion)",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -114,7 +151,7 @@
         "date": "2019-12-17",
         "description": "Payloads Cheat Sheet. In computing and telecommunications, the payload is the part of transmitted data that is the actual intended message. Headers and metadata are sent only to enable payload delivery.",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -149,7 +186,7 @@
         "date": "2019-12-15",
         "description": "Notes about jvm languages. Get process dumps. Install localy a maven's lib. Get bytecode by class",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -170,7 +207,7 @@
         "date": "2019-12-09",
         "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users. It is the default database for macOS Server, and is also available for Linux, FreeBSD, OpenBSD, and Windows.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -199,7 +236,7 @@
         "date": "2019-12-08",
         "description": "Work with archives in a terminal",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -216,50 +253,12 @@
         ]
     },
     {
-        "id": "network",
-        "image": "img/network.png",
-        "date": "2019-12-06",
-        "description": "Network scan examples. Check network activity. Check domain's by common cert. Change mac address.",
-        "links": [
-            [
-                "https://www.cyberciti.biz/security/nmap-command-examples-tutorials/",
-                "Top 32 Nmap Command Examples For Linux Sys/Network Admins"
-            ],
-            [
-                "https://askubuntu.com/questions/57339/connect-disconnect-from-vpn-from-the-command-line",
-                "Connect/disconnect from VPN from the command line"
-            ]
-        ],
-        "category": {
-            "value": "DevOps",
-            "style": "cat-1",
-            "name": "DEVOPS"
-        },
-        "hiddenTags": [
-            "network",
-            "traceroute",
-            "nmap",
-            "nc",
-            "ifconfig",
-            "mac",
-            "hosts",
-            "network-manager",
-            "nmcli",
-            "curl",
-            "wget",
-            "netstat",
-            "certs",
-            "nmcli",
-            "vulns"
-        ]
-    },
-    {
         "id": "reverse_shell",
         "image": "img/terminal.jpeg",
         "date": "2019-12-06",
         "description": "Reverse Shell Cheat Sheet. If you’re lucky enough to find a command execution vulnerability during a penetration test, pretty soon afterwards you’ll probably want an interactive shell.",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -288,7 +287,7 @@
         "date": "2019-12-01",
         "description": "Autologin, disable guest session, scripts for autorun. Install net-tools (ifconfig), samba, skype, insomnia, sdkman, gnome shell, wine,",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -338,7 +337,7 @@
         "date": "2019-12-01",
         "description": "MySQL queries examples, joins",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -361,7 +360,7 @@
         "date": "2019-11-23",
         "description": "Простой пример работы с Metasploit Framework",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -421,7 +420,7 @@
         "description": "Зоопарк архитектур",
         "date": "2019-11-19",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -436,7 +435,7 @@
         "description": "Часть 4. Нейросети и глубокое обучение",
         "date": "2019-11-18",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -451,7 +450,7 @@
         "description": "Часть 3. Ансамбли",
         "date": "2019-11-16",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -466,7 +465,7 @@
         "description": "Часть 2. Обучение с подкреплением",
         "date": "2019-11-14",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -481,7 +480,7 @@
         "description": "HTTP request smuggling",
         "date": "2019-11-13",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -496,7 +495,7 @@
         "description": "Часть 1. Классическое обучение",
         "date": "2019-11-13",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -511,7 +510,7 @@
         "description": "Омновные виды ML",
         "date": "2019-11-12",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -526,7 +525,7 @@
         "date": "2019-11-11",
         "description": "MySQL users and backups.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -542,7 +541,7 @@
         "description": "Карта мира ML",
         "date": "2019-11-11",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -557,7 +556,7 @@
         "description": "Deep learning в контексте Artificial intelligence",
         "date": "2019-11-09",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -572,7 +571,7 @@
         "date": "2019-10-29",
         "description": "CTF binary tricks. Some tricks for binaries CTFs and another hacking. RCE(Remote Code Execution), LFI(Local File Inclusion)",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -594,7 +593,7 @@
             ]
         ],
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -620,7 +619,7 @@
         ],
         "uri": "glassfish.html",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -642,7 +641,7 @@
             "https://github.com/x90skysn3k/brutespray"
         ],
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -659,7 +658,7 @@
         "date": "2019-10-26 14:24",
         "description": "Useful materials for python",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -682,7 +681,7 @@
         "date": "2019-10-26 14:02",
         "description": "Commands for generate certs, extract certs",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -702,7 +701,7 @@
         "date": "2019-10-25 17:15",
         "description": "Basic commands and tricks for android.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -724,7 +723,7 @@
         "description": "Базовые состовляющие ML",
         "date": "2019-10-08",
         "category": {
-            "value": "Machine Learning",
+            "value": "Машинное обучение",
             "style": "cat-4",
             "name": "ML"
         },
@@ -739,7 +738,7 @@
         "description": "Феникс ИнтерКом или бомж развод в Минске.",
         "date": "2019-09-16",
         "category": {
-            "value": "Another",
+            "value": "Без категории",
             "style": "",
             "name": "ANOTHER"
         },
@@ -759,7 +758,7 @@
             ]
         ],
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -781,7 +780,7 @@
         "date": "2019-09-01 23:02",
         "description": "Work with the Virtual Box",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -797,7 +796,7 @@
         "date": "2019-09-01 22:13",
         "description": "Customs for shells (Linux, MacOS, Android(Termux))",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -829,7 +828,7 @@
             ]
         ],
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -846,7 +845,7 @@
         "description": "Наконец-то прошел курс CTF по категории WEB.",
         "date": "2019-07-28",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -862,7 +861,7 @@
         "description": "Написал еще одного бота, проверяющего грамматику. Пользуйтесь пока бесплатно. Ссылка на самого бота по нажатию",
         "date": "2019-07-16",
         "category": {
-            "value": "Services",
+            "value": "Сервисы",
             "style": "cat-3",
             "name": "SERVICES"
         },
@@ -879,7 +878,7 @@
         "description": "Пишу бота для телеграмма \"Conbot\". Специально для публичного тестирования поднял отдельный инстанс. Ссылка на самого бота по нажатию",
         "date": "2019-07-12",
         "category": {
-            "value": "Services",
+            "value": "Сервисы",
             "style": "cat-3",
             "name": "SERVICES"
         },
@@ -894,7 +893,7 @@
         "description": "История о стареньком Philips Xenium W6610, слежке, практиках и хитростях андроида.",
         "date": "2019-07-05",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -909,7 +908,7 @@
         "date": "2019-06-01 13:42",
         "description": "Show locks and another a mysql db info",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -933,7 +932,7 @@
             ]
         ],
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -950,7 +949,7 @@
         "date": "2019-05-12 11:27",
         "description": "Generate, add and fix permissions for keys",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -970,7 +969,7 @@
         "date": "2019-05-04 8:18",
         "description": "Install docker, docker-compose. Basic docker commands.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -989,7 +988,7 @@
         "date": "2019-03-02 12:15",
         "description": "The screen utility provides a way to run a command on a Linux system, detach from it, and then reattach later.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1004,7 +1003,7 @@
         "description": "История о том как пользователи гитхаба сами же сливают свои приватные данные...",
         "date": "2019-02-25",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -1019,7 +1018,7 @@
         "description": "Мои мысли о выборе ОС, а также опыте использования...",
         "date": "2019-01-20",
         "category": {
-            "value": "Another",
+            "value": "Без категории",
             "style": "",
             "name": "ANOTHER"
         },
@@ -1035,7 +1034,7 @@
         "date": "2018-12-27 17:01",
         "description": "Let's encrypt guideline for nginx",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1059,7 +1058,7 @@
         "date": "2018-07-20 22:41",
         "description": "Recover Grub2",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1074,7 +1073,7 @@
         "date": "2018-08-25 21:46",
         "description": "VNC server x11vnc for Linux",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1091,7 +1090,7 @@
         "date": "2018-06-12 19:06",
         "description": "RabbitMQ is an open-source message-broker software (sometimes called message-oriented middleware) that originally implemented the Advanced Message Queuing Protocol (AMQP) and has since been extended with a plug-in architecture to support Streaming Text Oriented Messaging Protocol (STOMP), Message Queuing Telemetry Transport (MQTT), and other protocols",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1107,7 +1106,7 @@
         "date": "2019-02-11 23:17",
         "description": "Tricks for mongo db",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -1130,7 +1129,7 @@
         "date": "2018-03-19 17:49",
         "description": "How search in google",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -1151,7 +1150,7 @@
         "date": "2018-10-10 22:19",
         "description": "Hotkeys for vim",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -1166,7 +1165,7 @@
         "date": "2019-01-11 19:54",
         "description": "Generate and export a GPG key",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1183,7 +1182,7 @@
         "date": "2019-02-13 15:00",
         "description": "Connect VPN to diffrent OS in pictures",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1202,7 +1201,7 @@
         "date": "1999-12-31 23:59",
         "description": "Regular's expressions",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -1218,7 +1217,7 @@
         "date": "1999-12-31 23:59",
         "description": "Hacking Team story",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -1235,7 +1234,7 @@
         "date": "1999-12-31 23:59",
         "description": "Reset any Linux password",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -1253,7 +1252,7 @@
         "date": "2019-02-12 01:20",
         "description": "Microsoft Windows tricks",
         "category": {
-            "value": "Hacking",
+            "value": "Хакинг",
             "style": "cat-2",
             "name": "HACKING"
         },
@@ -1278,7 +1277,7 @@
         "date": "2018-07-18 23:26",
         "description": "Guideline about mysql replications (mb not relevant).",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1299,7 +1298,7 @@
         "date": "2018-10-08 23:14",
         "description": "Basic mysql information. Isolation levels.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1316,7 +1315,7 @@
         "date": "1999-12-31 23:59",
         "description": "Wi-fi hotspot Ubuntu. Below I will show you how to use Unity's default network manager to create a wireless hotspot with Android devices support, tested in 64-bit Ubuntu 1404 with Nexus 4 and Sumsung Galaxy ace3.",
         "category": {
-            "value": "DevOps",
+            "value": "Девопс",
             "style": "cat-1",
             "name": "DEVOPS"
         },
@@ -1338,7 +1337,7 @@
         "date": "1999-12-31 23:59",
         "description": "Cook Ruby+Bundler",
         "category": {
-            "value": "Programming",
+            "value": "Программирование",
             "style": "cat-3",
             "name": "PROGRAMMING"
         },
@@ -1355,7 +1354,7 @@
         "description": "Кратко обо мне...",
         "date": "1993-**-**",
         "category": {
-            "value": "Another",
+            "value": "Без категории",
             "style": "",
             "name": "ANOTHER"
         },

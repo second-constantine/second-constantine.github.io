@@ -1,31 +1,31 @@
 [
     {
-        "value": "Hacking",
+        "value": "Хакинг",
         "style": "cat-2",
         "name": "HACKING"
     },
     {
-        "value": "DevOps",
+        "value": "Девопс",
         "style": "cat-1",
         "name": "DEVOPS"
     },
     {
-        "value": "Programming",
+        "value": "Программирование",
         "style": "cat-3",
         "name": "PROGRAMMING"
     },
     {
-        "value": "Machine Learning",
+        "value": "Машинное обучение",
         "style": "cat-4",
         "name": "ML"
     },
     {
-        "value": "Services",
+        "value": "Сервисы",
         "style": "cat-3",
         "name": "SERVICES"
     },
     {
-        "value": "Another",
+        "value": "Без категории",
         "style": "",
         "name": "ANOTHER"
     }
