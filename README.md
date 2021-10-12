@@ -25,4 +25,14 @@ gh-pages -d site
 ```
 
 # Настройка github
-Переходим в настройки (https://github.com/ITcompressor/itcompressor.github.io/settings/pages) и указываем ветку `gh-pages`
+Переходим в настройки (https://github.com/second-constantine/second-constantine.github.io/settings/pages) и указываем ветку `gh-pages`
+
+# Возможные проблемы
+Если не хватает прав
+```bash
+sudo chmod 777 /usr/local/lib/node_modules/gh-pages/ -R
+```
+fatal: A branch named 'gh-pages' already exists.
+```bash
+sudo rm -rf /usr/local/lib/node_modules/gh-pages/.cache
+```
