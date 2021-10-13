@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Constantine&#x27;s tech blog</title>
+    <title>philipsw6610</title>
     <meta name="description" content="Documentation for Constantine&#x27;s tech blog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -73,7 +73,7 @@
             
                 <ul>
     
-        <li><a href="/history/philipsw6610">philipsw6610</a></li>
+        <li><a class="active" href="/history/philipsw6610">philipsw6610</a></li>
         
     
 </ul>
@@ -94,12 +94,20 @@
 
             </div>
             <div class='content'>
-                <blockquote>
-<p>Мой тех бложек в формате базы знаний</p>
-</blockquote>
-<table><thead><tr><th>upd: 2021-10-13</th><th>Ссылка</th><th>Описание</th></tr></thead><tbody>
-<tr><td><img src="/assets/img/philips.png" alt="philips"></td><td><a href="/history/philipsw6610">История о стареньком Philips Xenium W6610</a></td><td></td></tr>
-</tbody></table>
+                <p>История о стареньком Philips Xenium W6610</p>
+<p><strong>tags</strong> <code>android</code> <code>google</code>
+<strong>date</strong> 2019-07-05 10:40</p>
+<p><img src="/assets/img/philips.png" alt="philips"></p>
+<p>Уже давно я потрошил один из своих андроид сматрфонов (Philips Xenium W6610) и заметил, что даже при полностью удаленных 
+гугл сервисах гугл не отпускает смартфон на свободу, при этом смарт держит связь с несколькими серверами гугл (германия, штаты) + как бонус
+2 китайских серверов (определить владельцев не удалось).
+Решал проблему баном доменов через <code>/system/etc/hosts</code> (ссылка домена на 127.0.0.1) + запросы по ip банил с помощью 
+<code>iptables</code>.
+При бане заметил переключение на запасные сервера. </p>
+<ul>
+<li>Список заблокированных айпишников: 172.217.23.174, 216.58.205.238, 172.217.21.238, 54.230.230.126, 128.199.105.193</li>
+<li>Список доменов: server-54-230-230-126.waw50.r.cloudfront.net, fra15s24-in-f14.1e100.net, fra16s25-in-f14.1e100.net</li>
+</ul>
 
             </div>
             <div class='sidebar-right'>
