@@ -3,7 +3,7 @@
 # Установка doctave
 ```bash
 sudo apt install cargo
-cargo install --git https://github.com/Doctave/doctave --tag 0.2.0
+cargo install --git https://github.com/Doctave/doctave --tag 0.3.1
 ```
 
 # Инициализация проекта
