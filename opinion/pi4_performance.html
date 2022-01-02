@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>philipsw6610</title>
+    <title>pi4_performance</title>
     <meta name="description" content="Documentation for Constantine&#x27;s tech blog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -74,7 +74,7 @@
             
                 <ul>
     
-        <li><a href="/opinion/pi4_performance">pi4_performance</a></li>
+        <li><a class="active" href="/opinion/pi4_performance">pi4_performance</a></li>
         
     
 </ul>
@@ -85,7 +85,7 @@
             
                 <ul>
     
-        <li><a class="active" href="/story/philipsw6610">philipsw6610</a></li>
+        <li><a href="/story/philipsw6610">philipsw6610</a></li>
         
     
 </ul>
@@ -107,19 +107,18 @@
             </div>
             <div class='content'>
                 <p>История о стареньком Philips Xenium W6610</p>
-<p><strong>tags</strong> <code>android</code> <code>google</code>
-<strong>date</strong> 2019-07-05 10:40</p>
-<p><img src="/assets/img/philips.png" alt="philips"></p>
-<p>Уже давно я потрошил один из своих андроид сматрфонов (Philips Xenium W6610) и заметил, что даже при полностью удаленных 
-гугл сервисах гугл не отпускает смартфон на свободу, при этом смарт держит связь с несколькими серверами гугл (германия, штаты) + как бонус
-2 китайских серверов (определить владельцев не удалось).
-Решал проблему баном доменов через <code>/system/etc/hosts</code> (ссылка домена на 127.0.0.1) + запросы по ip банил с помощью 
-<code>iptables</code>.
-При бане заметил переключение на запасные сервера. </p>
-<ul>
-<li>Список заблокированных айпишников: 172.217.23.174, 216.58.205.238, 172.217.21.238, 54.230.230.126, 128.199.105.193</li>
-<li>Список доменов: server-54-230-230-126.waw50.r.cloudfront.net, fra15s24-in-f14.1e100.net, fra16s25-in-f14.1e100.net</li>
-</ul>
+<p><strong>tags</strong> <code>linux</code> <code>rpi</code> <code>pi4</code>
+<strong>date</strong> 2022-01-02 19:58</p>
+<details><summary>Фото самой малинки</summary>
+<p>
+</p><p><img src="/assets/img/rpi/pi4_3.png" alt="pi4_3.png"></p>
+<p></p>
+</details>
+<p>Решил проверить производительность малинки, запустив на ней большую часть своих ботов и был приятно удивлен.</p>
+<p>Использую стандартную ОС: Raspbian GNU/Linux 10 (buster) armv7l, запущено 6 
+spring boot application, 5 из которых боты (4 телеграмм бота), бд (в основном mongodb) - внешняя.</p>
+<p>Ниже будет скриншот мониторинга загрузки:</p>
+<p><img src="/assets/img/rpi/pi4_performance.png" alt="pi4_performance.png"></p>
 
             </div>
             <div class='sidebar-right'>
