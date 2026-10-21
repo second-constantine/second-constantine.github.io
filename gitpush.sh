@@ -1,8 +1,12 @@
 #!/bin/bash
+# Коммит + push изменений в main
+set -e
 
-commit=$*
+cd "$(dirname "$0")"
+
+commit="${1:-chore: update redirect stub}"
 
 git pull
-git add .
-git commit -m "$commit"
+git add -A
+git commit -m "$commit" || echo "Изменений нет"
 git push

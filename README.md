@@ -1,38 +1,38 @@
-Гайд создания
+# second-constantine.github.io — заглушка «сайт переехал»
 
-# Установка doctave
-```bash
-sudo apt install cargo
-cargo install --git https://github.com/Doctave/doctave --tag 0.4.1
+Старый личный тех-блог на GitHub Pages. Контент переехал на
+**[itcompressor.e7.by](https://itcompressor.e7.by/)**, здесь осталась статичная
+заглушка с автоматическим переходом на новый домен.
+
+## Структура
+
+```
+site/                 # статика, которая публикуется на GitHub Pages
+├── index.html        # главная заглушка
+├── 404.html          # заглушка для несуществующих страниц
+├── assets/
+│   ├── style.css     # оформление (светлая/тёмная тема по системной)
+│   └── redirect.js   # авторедирект + счётчик отсчёта
+├── favicon.svg/.ico, apple-touch-icon.png, favicon-32x32.png
 ```
 
-# Инициализация проекта
+Сборки нет: чистый HTML + CSS + небольшой JS.
+
+## Деплой
+
 ```bash
-doctave init
+./deploy.sh          # публикация site/ в ветку gh-pages
+./dev.sh             # локальный просмотр (python3 -m http.server в site/)
 ```
 
-# Подготовка для деплоя github pages
-```bash
-touch docs/_include/.nojekyll
+`deploy.sh` кладёт содержимое `site/` в ветку `gh-pages` (force-push) — так же, как
+раньше работал `gh-pages -d site`, но без зависимости от doctave и node-пакетов.
 
-npm install -g gh-pages@3.0.0
-```
+Требуется доступ к репозиторию по HTTPS (токен/кейчейн) или по SSH.
 
-# Деплой
-```bash
-doctave build --release
-gh-pages -d site
-```
+## Как работает переход
 
-# Настройка github
-Переходим в настройки (https://github.com/second-constantine/second-constantine.github.io/settings/pages) и указываем ветку `gh-pages`
-
-# Возможные проблемы
-Если не хватает прав
-```bash
-sudo chmod 777 /usr/local/lib/node_modules/gh-pages/ -R
-```
-fatal: A branch named 'gh-pages' already exists.
-```bash
-sudo rm -rf /usr/local/lib/node_modules/gh-pages/.cache
-```
+1. `<meta http-equiv="refresh" content="6; url=...">` — фолбэк, если JS отключён.
+2. `assets/redirect.js` — основной вариант: прогресс-бар, отсчёт 6 секунд,
+   кнопка «Остаться здесь» и отмена автоперехода при первом же взаимодействии
+   со страницей (клик клавиши, прокрутка, касание).
