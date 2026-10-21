@@ -1,0 +1,312 @@
+/* =====================================================================
+   Заглушка «сайт переехал» для itcompressor.github.io
+   Статика: HTML + CSS (+ короткий JS на редирект). Без сборки.
+   ===================================================================== */
+
+:root {
+    --brand: #3498db;
+    --brand-dark: #217db3;
+    --bg-1: #eef4fa;
+    --bg-2: #dfe9f4;
+    --card-bg: rgba(255, 255, 255, 0.82);
+    --card-border: rgba(255, 255, 255, 0.9);
+    --text: #1c2733;
+    --muted: #5b6570;
+    --faint: #8b949e;
+    --shadow: 0 18px 50px rgba(15, 23, 32, 0.14), 0 4px 12px rgba(15, 23, 32, 0.08);
+    --radius: 20px;
+    --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-1: #14171c;
+        --bg-2: #0d1015;
+        --card-bg: rgba(29, 34, 42, 0.86);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --text: #eef2f7;
+        --muted: #9aa4b1;
+        --faint: #6e7885;
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: var(--font);
+    color: var(--text);
+    line-height: 1.6;
+    background:
+        radial-gradient(1100px 620px at 12% -8%, rgba(52, 152, 219, 0.28), transparent 62%),
+        radial-gradient(900px 560px at 92% 8%, rgba(52, 152, 219, 0.16), transparent 60%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+}
+
+.page {
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ===== Карточка ===== */
+.card {
+    width: 100%;
+    padding: 40px 38px 32px;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.card__logo {
+    color: var(--brand);
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.card__logo svg {
+    filter: drop-shadow(0 6px 14px rgba(52, 152, 219, 0.35));
+}
+
+/* Стрелки «сжатия» в логотипе — лёгкая анимация */
+.logo-arrow {
+    transform-origin: center;
+    animation: squeeze 2.4s ease-in-out infinite;
+}
+
+.logo-arrow--left {
+    animation-delay: 0.15s;
+}
+
+@keyframes squeeze {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(3px);
+        opacity: 1;
+    }
+}
+
+.card__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 10px;
+}
+
+.card__title {
+    font-size: clamp(30px, 6vw, 40px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+}
+
+.card__text {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 26px;
+}
+
+.card__link {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(52, 152, 219, 0.55);
+    white-space: nowrap;
+}
+
+.card__link:hover {
+    color: var(--brand-dark);
+    border-bottom-style: solid;
+}
+
+/* ===== Кнопка ===== */
+.button {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(52, 152, 219, 0.45);
+    filter: brightness(1.05);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button:focus-visible,
+.card__cancel:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* ===== Прогресс авторедиректа ===== */
+.progress {
+    height: 4px;
+    margin: 26px 0 12px;
+    border-radius: 999px;
+    background: rgba(127, 140, 155, 0.22);
+    overflow: hidden;
+}
+
+.progress__bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+}
+
+.card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--faint);
+}
+
+.card__countdown {
+    font-family: var(--font-mono);
+}
+
+.card__cancel {
+    font: inherit;
+    font-size: 14px;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.card__cancel:hover {
+    color: var(--text);
+}
+
+.card__cancel[hidden] {
+    display: none;
+}
+
+/* ===== Теги ===== */
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(127, 140, 155, 0.2);
+}
+
+.tags li {
+    font-size: 13px;
+    color: var(--brand);
+    background: rgba(52, 152, 219, 0.12);
+    border-radius: 999px;
+    padding: 4px 12px;
+}
+
+/* ===== Подвал ===== */
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--faint);
+}
+
+.footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.footer__sep {
+    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 32px 22px 26px;
+    }
+
+    .card__text {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page,
+    .logo-arrow {
+        animation: none;
+    }
+
+    .button {
+        transition: none;
+    }
+}
